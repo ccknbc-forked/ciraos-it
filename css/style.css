@@ -1,0 +1,95 @@
+/*
+ * style.css
+*/
+
+:root {
+    --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
+    --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
+    --footer-color: #b0b0b0;
+    --author-color: rgb(30, 80, 146);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 2;
+}
+
+body {
+    background-image: url(/img/wallhaven-l3xk6q_1920x1080.webp);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navheader {
+    width: 95%;
+    margin: 4px auto;
+    display: flex;
+    box-shadow: var(--card-box-shadow);
+    text-align: center;
+    justify-content: center;
+}
+
+.navheader:hover {
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.navheader ul {
+    list-style-type: none;
+}
+
+.navheader ul li a {
+    text-decoration: none;
+    margin: auto 4px;
+    color: #000;
+    font-size: 18px;
+}
+
+.content {
+    width: 80%;
+    /* box-shadow: var(--card-box-shadow); */
+    margin: 16px auto;
+    display: grid;
+}
+
+.content:hover {
+    /* box-shadow: var(--card-hover-box-shadow); */
+}
+
+.avatar {
+    margin: 2px auto;
+}
+
+.avatar img {
+    border-radius: 100%;
+    width: 100px;
+}
+
+.author {
+    margin: 2px auto;
+    color: var(--author-color);
+    font-size: 20px;
+}
+
+.descr {
+    margin: 10px auto;
+}
+
+.footer {
+    bottom: 0;
+    height: 30px;
+    box-shadow: var(--card-box-shadow);
+    width: 100%;
+    position: fixed;
+    /* text-align: center; */
+    font-size: 12px;
+}
+
+.text {
+    margin: 5px 8px;
+    /* color: var(--footer-color); */
+}
