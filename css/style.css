@@ -61,7 +61,7 @@ body {
 }
 
 .avatar {
-    margin-top: 10px;
+    margin-top: 10px auto 0;
 }
 
 .avatar img {
