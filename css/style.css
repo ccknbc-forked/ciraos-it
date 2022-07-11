@@ -2,12 +2,24 @@
  * style.css
 */
 
+/*
+ * ---------------
+ * General
+ * ---------------
+*/
+
 :root {
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
-    --footer-color: #b0b0b0;
+    --footer-color: #999;
     --author-color: rgb(30, 80, 146);
+    /* --footer-background-color: ; */
 }
+
+/* @font-face {
+    font-family: 'ZhuZiAYuanJWD';
+    src: url('https://gcore.jsdelivr.net/gh/ciraos/File-agent@main/fonts/ZhuZiAYuanJWD.ttf');
+} */
 
 * {
     margin: 0;
@@ -16,53 +28,66 @@
 
 body {
     line-height: 2;
+    font-family: Arial, 'ZhuZiAYuanJWD', 'Microsoft Yahei', Helvetica, sans-serif;
 }
 
-body {
-    background-image: url(/img/wallhaven-l3xk6q_1920x1080.webp);
+/*
+ * Header
+*/
+
+header {
+    background-image: url('/img/wallhaven-l3xk6q_1920x1080.webp');
+    height: 100vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.navheader {
-    width: 95%;
-    margin: 4px auto;
-    display: flex;
-    box-shadow: var(--card-box-shadow);
-    text-align: center;
-    justify-content: center;
+.site-name {
+    float: left;
+    width: 80%;
+    height: 40px;
+    font-size: 20px
 }
 
-.navheader:hover {
-    box-shadow: var(--card-hover-box-shadow);
-}
-
-.navheader ul {
-    list-style-type: none;
-}
-
-.navheader ul li a {
+.site-name a {
     text-decoration: none;
-    margin: auto 4px;
     color: #000;
-    font-size: 18px;
+    margin: 12px;
 }
+
+.site-menus {
+    display: flex;
+    height: 40px;
+}
+
+.site-menus ul {
+    list-style-type: none;
+    margin: auto 4px;
+}
+
+.site-menus ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.site-info {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*
+ * Content
+*/
 
 .content {
     width: 80%;
-    /* box-shadow: var(--card-box-shadow); */
-    margin: 16px auto;
-    display: grid;
+    box-shadow: var(--card-box-shadow);
 }
 
-.content:hover {
-    /* box-shadow: var(--card-hover-box-shadow); */
-}
+/* .content:hover {} */
 
-.avatar {
-    margin: 10px auto 0;
-}
+.avatar {}
 
 .avatar img {
     border-radius: 100%;
@@ -70,7 +95,7 @@ body {
 }
 
 .author {
-    margin: 2px auto;
+
     color: var(--author-color);
     font-size: 20px;
 }
@@ -79,17 +104,21 @@ body {
     margin: 10px auto;
 }
 
+/*
+ * Footer
+*/
+
 .footer {
     bottom: 0;
     height: 30px;
-    box-shadow: var(--card-box-shadow);
     width: 100%;
-    position: fixed;
+    position: relative;
     /* text-align: center; */
     font-size: 12px;
+    text-align: center;
 }
 
 .text {
     margin: 5px 8px;
-    /* color: var(--footer-color); */
+    color: var(--footer-color);
 }
