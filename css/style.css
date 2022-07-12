@@ -11,9 +11,8 @@
 :root {
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
-    --footer-color: #999;
-    --author-color: rgb(30, 80, 146);
-    /* --footer-background-color: ; */
+    --header-text-color: rgb(184, 184, 184);
+    --footer-text-color: #bbb;
 }
 
 @font-face {
@@ -26,9 +25,14 @@
     padding: 0;
 }
 
+.fa {
+    font-size: 20px !important;
+    color: #fff;
+}
+
 body {
     line-height: 2;
-    font-family: Arial, 'Microsoft Yahei', 'ZhuZiAYuanJWD', Helvetica, sans-serif;
+    font-family: Arial, 'Microsoft Yahei', Helvetica, 'ZhuZiAYuanJWD', sans-serif;
 }
 
 /*
@@ -41,47 +45,46 @@ header {
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 2px 10px;
+}
+
+.header-menu {
+    transition: all .5s;
+    padding: 0 36px;
 }
 
 .site-name {
     float: left;
     width: 80%;
-    height: 40px;
-    font-size: 20px
 }
 
 .site-name a {
     text-decoration: none;
-    color: #000;
-    margin: 12px;
     font-size: 20px;
+    color: #fff;
 }
 
 .site-menus {
     display: flex;
-    height: 40px;
 }
 
 .site-menus ul {
     list-style-type: none;
-    margin: auto 4px;
+    margin: auto 6px;
 }
 
 .site-menus ul li a {
     text-decoration: none;
-    color: #000;
     font-size: 20px;
+    color: #fff;
 }
 
-.site-info {
+/* .site-info {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    color: #fff;
     font-size: 2.85em;
     line-height: 50vh;
-}
+} */
 
 /* #scroll-down {} */
 
@@ -105,7 +108,7 @@ header {
     height: 30px;
     width: 100%;
     position: relative;
-    /* text-align: center; */
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
+    color: var(--footer-text-color);
 }
