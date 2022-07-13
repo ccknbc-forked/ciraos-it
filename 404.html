@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
+            --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
+            --card--background-color: #e4b6b64f;
+        }
+
+        @font-face {
+            font-family: 'ZhuZiAYuanJWD';
+            src: url('https://gcore.jsdelivr.net/gh/ciraos/File-agent@main/fonts/ZhuZiAYuanJWD.ttf');
+        }
+
+        div {
+            margin: 16% auto 0;
+            width: 96%;
+            font-family: 'ZhuZiAYuanJWD', sans-serif;
+            box-shadow: var(--card--background-color);
+            text-align: center;
+            font-size: 40px;
+            height: max-content;
+            line-height: 1.6;
+        }
+
+        div:hover {
+            box-shadow: var(--card-hover-box-shadow);
+        }
+
+        .return {
+            border-radius: 10px;
+            width: max-content;
+            margin: 4px auto;
+        }
+
+        .return a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .return a:hover {
+            text-decoration: underline;
+            color: rgb(122, 241, 122);
+            background-color: #000;
+        }
+    </style>
+    <title>404 error</title>
 </head>
 
 <body>
 
-    <!-- scripts -->
-    <script defer src="//volunteer.cdn-go.cn/404/latest/404.js"></script>
+    <div>
+        <p>404 NOT FOUND!</p>
+        <p class="return">
+            <a href="/">返回主页</a>
+        </p>
+    </div>
 
 </body>
 

@@ -13,6 +13,7 @@
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
     --header-text-color: rgb(184, 184, 184);
     --footer-text-color: #bbb;
+    --card--background-color: #e4b6b64f;
 }
 
 @font-face {
@@ -26,26 +27,33 @@
 }
 
 .fa {
-    font-size: 20px !important;
+    font-size: 24.2px !important;
     color: #fff;
+}
+
+.icon {
+    width: 2.4em;
+    height: 2.4em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    margin: 0 4px;
 }
 
 body {
     line-height: 2;
-    font-family: Arial, 'Microsoft Yahei', Helvetica, 'ZhuZiAYuanJWD', sans-serif;
+    font-family: 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif;
+    background-image: url('/img/wallhaven-l3xk6q_1920x1080.webp');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*
  * Header
 */
 
-header {
-    background-image: url('/img/wallhaven-l3xk6q_1920x1080.webp');
-    height: 100vh;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* header {} */
 
 .header-menu {
     transition: all .5s;
@@ -78,37 +86,49 @@ header {
     color: #fff;
 }
 
-/* .site-info {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 2.85em;
-    line-height: 50vh;
-} */
-
-/* #scroll-down {} */
-
 /*
- * Content
+ * content
 */
 
 .content {
-    width: 40%;
+    margin: 10% auto;
+    width: 60%;
     box-shadow: var(--card-box-shadow);
-    margin: 30px auto;
+    height: max-content;
+    text-align: center;
+    line-height: 2;
+    font-size: 20.2px;
+    background-color: var(--card--background-color);
     border-radius: 10px;
 }
 
+.content:hover {
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.avatar {
+    padding-top: 10px;
+}
+
+.avatar img {
+    width: 100px;
+    border-radius: 100%;
+}
+
 /*
- * Footer
+ *footer
 */
 
 .footer {
     bottom: 0;
-    height: 30px;
     width: 100%;
-    position: relative;
+    position: absolute;
     font-size: 14px;
     text-align: center;
     color: var(--footer-text-color);
+    background-color: var(--card--background-color);
 }
