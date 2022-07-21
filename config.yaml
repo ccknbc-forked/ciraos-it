@@ -1,0 +1,91 @@
+
+name: CiraosDynamicWorker
+
+hotconfig:
+  - https://raw.githubusercontent.com/ChenYFan/ClientWorker/gh-pages/config.yaml
+  - https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/config.yaml
+
+catch_rules:
+
+  #! ClientWorker语法糖，匹配当前域，返回一个域名带端口
+  - rule: _
+    transform_rules:
+      - search: \#.+
+        searchin: url
+        replace: ''
+      - search: _ 
+        action: fetch
+        fetch:
+          engine: fetch 
+      - search: (^4|^5) 
+        searchin: status 
+        action: return
+        return:
+          body: The GateWay is down! This Page is provided by ClientWorker!
+          status: 503
+
+  #! 并发CDN流量请求
+  # - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+  #   transform_rules:
+  #     - search: _
+  #       replace:
+  #         - _
+  #         - https://unpkg.zhimg.com
+  #         - https://npm.elemecdn.com
+  #         - https://code.bdstatic.com/npm
+  #         #- https://npm.sourcegcdn.com
+  #         #- https://cdn.bilicdn.tk/npm
+
+  #! 并发CDN流量请求
+  # - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
+  #   transform_rules:
+  #     - search: _
+  #       replace:
+  #         - _
+  #         - https://cdn.bootcdn.net/ajax/libs
+  #         - https://lib.baomitu.com
+  #         - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs
+  #         - https://cdn.staticfile.org
+  #         - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs
+  #         #- https://cdnjs.sourcegcdn.com/ajax/libs
+
+  #! webp兼容计划
+  # - rule: (?<=^https\:\/\/s2.loli/(.*))\.jpg$
+  #   transform_rules:
+  #     - search: image\/webp
+  #       searchin: header
+  #       searchkey: Accept
+  #       replace: .webp
+  #       replacein: url
+  #       replacekey: .jpg
+
+  #! ICP绕备、家宽、动态加速
+  # - rule: _
+  #   transform_rules:
+  #     - search: \#.*
+  #       replace: ''
+  #     - search: _ 
+  #       replace: 
+  #       - _
+  #       - 150.158.84.252
+  #     - search: \.(js|css)
+  #       action: fetch
+  #       fetch:
+  #         status: 200
+  #         engine: classic
+  #         preflight: false
+  #         timeout: 5000
+  #         mode: cors
+  #         redirect: follow
+  #         credentials: include
+  #         timeout: 5000
+  #     - search: _
+  #       action: fetch
+  #       fetch:
+  #         status: 200
+  #         engine: parallel
+  #         preflight: true
+  #         mode: cors
+  #         redirect: follow
+  #         credentials: include
+  #         timeout: 5000
