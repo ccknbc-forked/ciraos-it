@@ -21,7 +21,7 @@ catch_rules:
         searchin: status 
         action: return
         return:
-          body: The GateWay is down! This Page is provided by ClientWorker!
+          body: The GateWay is down!This Page is provided by ClientWorker!
           status: 503
 
   #! 并发CDN流量请求
