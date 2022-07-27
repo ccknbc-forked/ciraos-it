@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'ZhuZiAYuanJWD';
-    src: url('https://gcore.jsdelivr.net/gh/ciraos/File-agent@main/fonts/ZhuZiAYuanJWD.ttf');
+    src: url('/src/ZhuZiAYuanJWD.ttf');
 }
 
 * {
