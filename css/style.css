@@ -3,16 +3,14 @@
 */
 
 /*
- * ---------------
- * General
- * ---------------
+ * --------------- General ---------------
 */
 
 :root {
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
     --header-text-color: rgb(184, 184, 184);
-    --footer-text-color: #bbb;
+    --footer-text-color: #625959;
     --card--background-color: #fff;
     --site-background-color: #f4f4f4;
 }
@@ -25,11 +23,6 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-.fa {
-    font-size: 24.2px !important;
-    color: #fff;
 }
 
 .icon {
@@ -53,7 +46,10 @@ body {
 .header {
     height: 100vh;
     border-bottom: 1px solid #666;
-    background-image: url('/img/wallhaven-l3xk6q_1920x1080.webp');
+    background-image: url('/img/20220107142826.png');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header-menu {
@@ -92,75 +88,53 @@ body {
 */
 
 .content {
-    margin: -40px auto 0;
-    width: 60%;
-    box-shadow: var(--card-box-shadow);
+    /* margin: -40px auto 0; */
     height: max-content;
-    text-align: center;
     line-height: 2;
     font-size: 20.2px;
-    background-color: var(--card--background-color);
-    border-radius: 10px;
+    color: #fff;
+    padding: 6px 0;
+    background-color: #4f383e;
+    text-align: center;
 }
 
-.content:hover {
-    box-shadow: var(--card-hover-box-shadow);
-}
-
-.content a {
-    text-decoration: none;
-}
+/* .content:hover {} */
 
 .avatar {
     padding-top: 10px;
 }
 
 .avatar img {
-    width: 100px;
+    width: 8%;
     border-radius: 100%;
 }
 
+.social a {
+    text-decoration: none;
+}
+
 /*
- * articles
+ * content - about
 */
-.article-cotainer {
-    display: flex;
-    margin: 8px auto 32px;
-    width: 60%;
+
+.content-about {
+    /* margin: -40px auto 0; */
+    height: max-content;
+    line-height: 2;
+    font-size: 20.2px;
+    color: #fff;
+    padding: 6px;
+    background-color: #82202b;
 }
 
-/* .article-container-list {} */
-
-.article-item {
-    background-color: var(--card--background-color);
-    width: 640px;
-    box-shadow: var(--card-box-shadow);
-    height: 14em;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    padding: 4px 6px;
-}
-
-.article-item:hover {
-    box-shadow: var(--card-hover-box-shadow);
-}
-
-/* .article-sidebar {} */
-
-.article-sidebar-item {
-    width: 396px;
-    margin: 20px 10px 0;
-    background-color: var(--card--background-color);
-    box-shadow: var(--card-box-shadow);
-    border-radius: 10px;
-    text-align: center;
-    padding: 4px 6px;
-    height: 14em;
-}
-
-.article-sidebar-item:hover {
-    box-shadow: var(--card-hover-box-shadow);
+.content-ilike {
+    /* margin: -40px auto 0; */
+    height: max-content;
+    line-height: 2;
+    font-size: 20.2px;
+    color: #fff;
+    padding: 6px;
+    background-color: #e9ccd3;
 }
 
 /*
@@ -170,7 +144,6 @@ body {
 .footer {
     bottom: 0;
     width: 100%;
-    position: relative;
     font-size: 14px;
     text-align: center;
     color: var(--footer-text-color);
