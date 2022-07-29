@@ -1,5 +1,4 @@
 
-#!
 name: CiraosDynamicWorker
 
 #! 热更新
@@ -10,15 +9,11 @@ hotconfig:
 #! 自动清除过期缓存时间间隔
 cleaninterval: 1000*60*4
 
-#!
 catch_rules:
 
   #! ClientWorker语法糖，匹配当前域，返回一个域名带端口
   - rule: _
     transform_rules:
-  #    - search: \#.+
-  #      searchin: url
-  #      replace: ''
       - search: _ 
         action: fetch
         fetch:
@@ -27,34 +22,15 @@ catch_rules:
           preflight: false
           timeout: 5000
           expire: 1000*60*5
-  #    - search: (^4|^5) 
-  #      searchin: status 
-  #      action: return
-  #      return:
-  #        body: 呐呐呐！欧尼酱！！！这个页面挂掉了呢！！！（＞人＜；）请联系网站管理员哦！！
-  #        status: 503
+      - search: (^4|^5) 
+        searchin: status 
+        action: return
+        return:
+          body: 呐呐呐！欧尼酱！！！这个页面挂掉了呢！！！（＞人＜；）请联系网站管理员哦！！ #? xxx
+          status: 503
 
-  #! 并发CDN流量请求 - npm
-  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+  #! skip
+  - rule: .*
     transform_rules:
-      - search: _
-        replace:
-          - _
-          - https://unpkg.zhimg.com       #? 回源已关闭，原缓存有效
-          - https://npm.elemecdn.com      #? 2022/7/12 确认关闭回源，缓存有效
-          - https://code.bdstatic.com/npm #? 确认关闭回源，缓存有效
-          #- https://npm.sourcegcdn.com    #? 滥用封仓库，强制数字版本号
-          #- https://cdn.bilicdn.tk/npm    #? 由GamerNoTitle提供的反代，请勿滥用:D
-
-  #! 并发CDN流量请求 - cdnjs
-  - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
-    transform_rules:
-      - search: _
-        replace:
-          - _
-          - https://cdn.bootcdn.net/ajax/libs
-          - https://lib.baomitu.com
-          - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs    #? 重庆邮电
-          - https://cdn.staticfile.org
-          - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs  #? 南大
-          - https://cdnjs.sourcegcdn.com/ajax/libs          #? 全同步 https://cdnjs.cloudflare.com
+      - search: .*
+        action: skip
