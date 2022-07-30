@@ -52,9 +52,12 @@ body {
     background-size: cover;
 }
 
+/* .header {} */
+
 .header-menu {
     transition: all .5s;
     padding: 16px;
+    font-size: 20px;
 }
 
 .site-name {
@@ -64,8 +67,7 @@ body {
 
 .site-name a {
     text-decoration: none;
-    font-size: 20px;
-    color: #000000;
+    color: #fff;
 }
 
 .site-menus {
@@ -79,8 +81,22 @@ body {
 
 .site-menus ul li a {
     text-decoration: none;
-    font-size: 20px;
-    color: #000000;
+    color: #fff;
+}
+
+.info {
+    width: 40%;
+    margin: 10% auto 0;
+    text-align: center;
+    line-height: 2.0;
+    font-size: 24px;
+}
+
+/* .avatar {} */
+
+.avatar img {
+    width: 14%;
+    border-radius: 100%;
 }
 
 /*
@@ -92,49 +108,32 @@ body {
     height: max-content;
     line-height: 2;
     font-size: 20.2px;
-    color: #fff;
     padding: 6px 0;
-    background-color: #4f383e;
+    background-color: var(--card--background-color);
     text-align: center;
+    margin: 18px auto;
+    width: 50%;
+    box-shadow: var(--card-box-shadow);
 }
 
-/* .content:hover {} */
-
-.avatar {
-    padding-top: 10px;
+.content:hover {
+    box-shadow: var(--card-hover-box-shadow);
 }
 
-.avatar img {
-    width: 8%;
-    border-radius: 100%;
+.social {
+    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
 }
 
 .social a {
     text-decoration: none;
 }
 
-/*
- * content - about
-*/
-
-.content-about {
-    /* margin: -40px auto 0; */
-    height: max-content;
-    line-height: 2;
-    font-size: 20.2px;
-    color: #fff;
-    padding: 6px;
-    background-color: #82202b;
+.job {
+    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
 }
 
-.content-ilike {
-    /* margin: -40px auto 0; */
-    height: max-content;
-    line-height: 2;
-    font-size: 20.2px;
-    color: #fff;
-    padding: 6px;
-    background-color: #e9ccd3;
+.learn {
+    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
 }
 
 /*
