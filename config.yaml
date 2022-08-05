@@ -2,12 +2,13 @@
 name: CiraosDynamicWorker
 
 #! 热更新
-hotconfig:
-  #- https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/config.yaml
-  - https://raw.githubusercontent.com/ChenYFan/ClientWorker/gh-pages/config.yaml
+# hotpatch:
+#   - https://raw.githubusercontent.com/ciraos/ciraos-octo/main/cw.js
+# hotconfig:
+#   - https://raw.githubusercontent.com/ciraos/ciraos-octo/main/config.yaml
 
 #! 自动清除过期缓存时间间隔
-cleaninterval: 1000*60*4
+cleaninterval: 1000*60*5
 
 catch_rules:
 
@@ -21,16 +22,57 @@ catch_rules:
           status: 200
           preflight: false
           timeout: 5000
-          expire: 1000*60*5
-      - search: (^4|^5) 
-        searchin: status 
-        action: return
-        return:
-          body: 呐呐呐！欧尼酱！！！这个页面挂掉了呢！！！（＞人＜；）请联系网站管理员哦！！ #? xxx
-          status: 503
+          expire: 1000*60*12
+      # - search: (^4|^5) 
+      #   searchin: status 
+      #   action: return
+      #   return:
+      #     body: 呐呐呐！欧尼酱！！！这个页面挂掉了呢！！！（＞人＜；）请联系网站管理员哦！！
 
-  #! skip
-  - rule: .*
+  #! 并发cdn流量请求 - NPM
+  # - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+  #   transform_rules:
+  #     - search: _
+  #       replace:
+  #         - _
+  #         - https://unpkg.zhimg.com       #? 回源已关闭，原缓存有效
+  #         - https://npm.elemecdn.com      #? 2022/7/12 确认关闭回源，缓存有效
+  #         - https://code.bdstatic.com/npm #? 确认关闭回源，缓存有效
+  #         #- https://npm.sourcegcdn.com    #? 滥用封仓库，强制数字版本号
+  #         #- https://cdn.bilicdn.tk/npm    #? 由GamerNoTitle提供的反代，请勿滥用:D
+  #       action: fetch
+  #       fetch:
+  #         engine: parallel
+  #         preflight: false
+  #         timeout: 5000
+  #         expire: 1000*60*60*12
+
+  #! 并发cdn流量请求 - CDNJS
+  # - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
+  #   transform_rules:
+  #     - search: _
+  #       replace:
+  #         - _
+  #         - https://cdn.bootcdn.net/ajax/libs
+  #         - https://lib.baomitu.com
+  #         - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs    #? 重庆邮电
+  #         - https://cdn.staticfile.org
+  #         - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs  #? 南大
+  #         - https://cdnjs.sourcegcdn.com/ajax/libs          #? 全同步 https://cdnjs.cloudflare.com
+  #       action: fetch
+  #       fetch:
+  #         engine: parallel
+  #         preflight: false
+  #         timeout: 5000
+  #         expire: 1000*60*60*12
+  
+  #!
+  - rule: ^http\:\/\/
     transform_rules:
-      - search: .*
-        action: skip
+      - search: ^http\:\/\/
+        replace: ^https\:\/\/
+        action: fetch
+        fetch:
+          engine: fetch
+          preflight: false
+          timeout: 5000

@@ -45,7 +45,6 @@ body {
 
 .header {
     height: 100vh;
-    border-bottom: 1px solid #666;
     background-image: url('/img/20220107142826.png');
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -109,7 +108,6 @@ body {
     line-height: 2;
     font-size: 20.2px;
     padding: 6px 0;
-    background-color: var(--card--background-color);
     text-align: center;
     margin: 18px auto;
     width: 50%;
@@ -120,20 +118,10 @@ body {
     box-shadow: var(--card-hover-box-shadow);
 }
 
-.social {
-    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
-}
+/* .social {} */
 
 .social a {
     text-decoration: none;
-}
-
-.job {
-    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
-}
-
-.learn {
-    border-bottom: 1px solid rgba(7, 17, 27, 0.09);
 }
 
 /*
@@ -146,8 +134,8 @@ body {
     font-size: 14px;
     text-align: center;
     color: var(--footer-text-color);
-    background-color: var(--card--background-color);
     height: 60px;
     padding: 20px 0;
     line-height: 2;
+    position: fixed;
 }

@@ -1,1 +1,6 @@
-importScripts('https://npm.sourcegcdn.com/clientworker@2.7.1/dist/cw.js')
+
+/**
+ * ClientWorker cw.js
+ */
+
+importScripts('https://npm.sourcegcdn.com/clientworker@3.0.0-beta-2/dist/cw.js')
