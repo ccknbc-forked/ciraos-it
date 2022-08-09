@@ -45,10 +45,7 @@ body {
 
 .header {
     height: 100vh;
-    /* background-image: url('/img/');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    background: linear-gradient(to bottom right, #eae5c9 0%, #6cc6cb 100%);
 }
 
 .header-menu {
