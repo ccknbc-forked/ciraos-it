@@ -162,5 +162,5 @@ body {
     color: #000;
     font-size: 15px;
     color: var(--footer-text-color);
-    font-family: 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif;
+    /* font-family: 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif; */
 }
