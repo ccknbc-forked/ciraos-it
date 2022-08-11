@@ -18,16 +18,18 @@
 
         <div class="header-menu">
 
-            <img onerror="javascript:this.src='/img/404.webp'" src="/img/logo.webp" alt="logo">
+            <a rel="noopener noreferrer" href="/">
+                <img src="/img/logo.webp" alt="logo">
+            </a>
             <div class="navagation-bar">
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top">博客</a></li>
                 </ul>
                 <ul>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/friends">友人帐</a></li>
+                    <li><a rel="noopener noreferrer" href="/">链接</a></li>
                 </ul>
                 <ul>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/talk">留言板</a></li>
+                    <li><a rel="noopener noreferrer" href="/">链接1</a></li>
                 </ul>
             </div>
 
@@ -35,22 +37,21 @@
 
         <div class="info">
             <div class="avatar">
-                <img onerror="javascript:this.src='/img/404.webp'"
-                    src="https://s2.loli.net/2022/05/24/mZAcl5qUHo4dkJw.png" alt="avatar">
+                <img src="" alt="avatar">
             </div>
             <div class="descr">夫所以读书学问，本欲开心明目，利于行耳。</div>
         </div>
 
-        <div id="scrolldown">
+        <!-- <div id="scrolldown">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-huaban20"></use>
             </svg>
-        </div>
+        </div> -->
 
     </div>
 
     <!-- content -->
-    <div class="content">
+    <div class="content" id="content">
 
         <div class="content-list">
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/ciraos">
@@ -91,66 +92,75 @@
 
     <footer class="footer" id="footer">
 
-        <div class="footer-logo">
-            <div class="footer-item-title">@葱苓科技</div>
-            <img onerror="javascript:this.src='/img/404.webp'" src="https://s2.loli.net/2022/05/24/mZAcl5qUHo4dkJw.png"
-                alt="logo" style="width:16.2%;padding-top:8px;">
+        <div class="footer-info">
+
+            <div class="footer-logo">
+                <div class="footer-item-title">@葱苓科技</div>
+                <img src="" alt="logo" style="width:16.2%;padding-top:8px;">
+            </div>
+
+            <div class="footer-item">
+                <div class="footer-item-title">博客</div>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/archives/">归档</a></li>
+                </ul>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/friends/">友人帐</a></li>
+                </ul>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/shuoshuo">说说</a></li>
+                </ul>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/talk/">留言板</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <div class="footer-item-title">导航</div>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer"
+                            href="http://status.ciraos.top/status/index">status</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://news-two-mauve.vercel.app/">每日早报</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <div class="footer-item-title">关于窝</div>
+                <ul>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/about">关于</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <div class="footer-item-title">联系方式</div>
+                <ul style="display:flex;">
+                    <li>
+                        <p style="overflow:hidden;">微信扫码</p>
+                        <span><img src="" alt="wechat"></span>
+                    </li>
+                    <li>
+                        <p style="overflow:hidden;">微信扫码1</p>
+                        <span><img src="" alt="wechat1"></span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer"
+                            href="mailto:frnk.ka@foxmail.com">frank.ka@foxmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="footer-item">
-            <div class="footer-item-title">博客</div>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/archives/">归档</a></li>
-            </ul>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/friends/">友人帐</a></li>
-            </ul>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/shuoshuo">说说</a></li>
-            </ul>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/talk/">留言板</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-item">
-            <div class="footer-item-title">导航</div>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="http://status.ciraos.top/status/index">status</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://news-two-mauve.vercel.app/">每日早报</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-item">
-            <div class="footer-item-title">关于窝</div>
-            <ul>
-                <li>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.ciraos.top/about">关于</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="footer-item">
-            <div class="footer-item-title">联系方式</div>
-            <ul style="display:flex;">
-                <li>
-                    <p style="overflow:hidden;">微信扫码</p>
-                    <span><img onerror="javascript:this.src='/img/404.webp'" src="" alt="wechat"></span>
-                </li>
-                <li>
-                    <p style="overflow:hidden;">微信扫码1</p>
-                    <span><img onerror="javascript:this.src='/img/404.webp'" src="" alt="wechat1"></span>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a target="_blank" rel="noopener noreferrer"
-                        href="mailto:frnk.ka@foxmail.com">frank.ka@foxmail.com</a>
-                </li>
-            </ul>
+        <div class="footer-info">
+            <p style="color:#bbb;font-size: 14px;">Copyright © since 2022 Ciraos葱苓 All Rights Reserved</p>
         </div>
 
     </footer>

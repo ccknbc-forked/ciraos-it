@@ -67,6 +67,10 @@ body {
     box-shadow: var(--card-hover-box-shadow);
 }
 
+.header-menu a {
+    text-decoration: none;
+}
+
 /* .logo {} */
 
 .navagation-bar {
@@ -92,10 +96,12 @@ body {
     color: var(--header-text-color);
 }
 
-#scroll-down {
+/* #scrolldown {
     margin: 2px auto;
     bottom: 0;
-    width: 10%;
+    width: 10px;
+    cursor: pointer;
+    position: relative;
 }
 
 /* .avatar {} */
@@ -140,22 +146,29 @@ body {
 
 .footer {
     bottom: 0;
-    /* width: 98%; */
     line-height: 2;
     position: relative;
-    display: flex;
+    display: block;
     border-top: 1px solid #000;
     margin: 2px auto;
-    max-width: 98%;
-    padding: 6px 10px;
+    width: 98%;
+    padding-top: 10px;
+}
+
+.footer-info {
+    display: flex;
+    margin: 4px auto;
+    width: max-content;
+    color: var(--footer-text-color);
 }
 
 .footer-logo {
     text-align: center;
+    width: 180px;
 }
 
 .footer-item {
-    min-height: 330px;
+    min-height: max-content;
     width: 200px;
     display: block;
     overflow: hidden;
