@@ -51,29 +51,36 @@ body {
 .header-menu {
     transition: all .5s;
     font-size: 20px;
-    margin: 0 auto;
+    margin: 0px auto;
     width: 80%;
     display: flex;
     height: 40px;
     border-radius: 10px;
     text-align: center;
-    justify-content: center;
-    padding: 16px 0;
+    justify-content: space-between;
+    padding: 18px;
     box-shadow: var(--card-box-shadow);
+    background-color: rgb(238, 236, 236);
 }
 
 .header-menu:hover {
     box-shadow: var(--card-hover-box-shadow);
 }
 
-.header-menu ul {
+/* .logo {} */
+
+.navagation-bar {
+    display: flex;
+}
+
+.navagation-bar ul {
     list-style-type: none;
 }
 
-.header-menu ul li a {
+.navagation-bar ul li a {
     text-decoration: none;
+    margin: 2px 6px;
     color: var(--header-text-color);
-    margin: 0 4px;
 }
 
 .info {
@@ -83,6 +90,12 @@ body {
     line-height: 2.0;
     font-size: 24px;
     color: var(--header-text-color);
+}
+
+#scroll-down {
+    margin: 2px auto;
+    bottom: 0;
+    width: 10%;
 }
 
 /* .avatar {} */
