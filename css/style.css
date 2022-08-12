@@ -43,7 +43,7 @@
 }
 
 body {
-    font-family: '仓耳渔阳体', 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif;
+    font-family: '仓耳渔阳体';
     background-color: var(--site-background-color);
 }
 
