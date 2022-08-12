@@ -19,6 +19,15 @@
     src: url('/src/ZhuZiAYuanJWD.ttf');
 }
 
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: "仓耳渔阳体";
+    font-weight: 400;
+    src: url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Fi4RDPOLg63NXJkvMVl_X.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Rv46fC6QtkfsmhCJwnJ8H.woff") format("woff");
+    font-display: swap;
+}
+
 .icon {
     width: 1em;
     height: 1em;
@@ -34,7 +43,7 @@
 }
 
 body {
-    /* font-family: 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif; */
+    font-family: '仓耳渔阳体', 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif;
     background-color: var(--site-background-color);
 }
 
