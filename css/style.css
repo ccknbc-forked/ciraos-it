@@ -21,8 +21,8 @@
 }
 
 .icon {
-    width: 2.4em;
-    height: 2.4em;
+    width: 1em;
+    height: 1em;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
@@ -96,13 +96,13 @@ body {
     color: var(--header-text-color);
 }
 
-#scrolldown {
+/* #scrolldown {
     margin: 2px auto;
     bottom: 0;
     width: 10px;
     cursor: pointer;
     position: relative;
-}
+} */
 
 /* .avatar {} */
 
@@ -185,4 +185,8 @@ body {
     text-decoration: none;
     font-size: 15px;
     color: #000;
+}
+
+.social a {
+    text-decoration: none;
 }
