@@ -116,7 +116,6 @@ body {
 */
 
 .content {
-    /* margin: -40px auto 0; */
     height: max-content;
     line-height: 2;
     font-size: 20.2px;
@@ -185,5 +184,5 @@ body {
 .footer-item ul li a {
     text-decoration: none;
     font-size: 15px;
-    /* color: #000; */
+    color: #000;
 }
