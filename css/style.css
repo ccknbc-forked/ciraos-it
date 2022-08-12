@@ -96,7 +96,7 @@ body {
     color: var(--header-text-color);
 }
 
-/* #scrolldown {
+#scrolldown {
     margin: 2px auto;
     bottom: 0;
     width: 10px;
