@@ -10,7 +10,7 @@
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
     /* --header-text-color: rgb(184, 184, 184); */
-    --footer-text-color: #1c0d1a;
+    --footer-text-color: #bbb;
     --card--background-color: #fff;
     --site-background-color: #f4f4f4;
 }
@@ -159,7 +159,6 @@ body {
     display: flex;
     margin: 4px auto;
     width: max-content;
-    color: var(--footer-text-color);
 }
 
 .footer-logo {
@@ -185,8 +184,6 @@ body {
 
 .footer-item ul li a {
     text-decoration: none;
-    color: #000;
     font-size: 15px;
-    color: var(--footer-text-color);
-    /* font-family: 'ZhuZiAYuanJWD', Arial, 'Microsoft Yahei', Helvetica, sans-serif; */
+    /* color: #000; */
 }
