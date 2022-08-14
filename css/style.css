@@ -43,7 +43,7 @@
 }
 
 body {
-    font-family: '仓耳渔阳体';
+    /* font-family: '仓耳渔阳体'; */
     background-color: var(--site-background-color);
 }
 
@@ -131,6 +131,54 @@ body {
 
 .content-list {
     transition: all .5s;
+}
+
+/*
+  * guide
+*/
+
+.guide {
+    height: max-content;
+    line-height: 2;
+    display: block;
+    margin: 6px auto;
+    width: 60%;
+}
+
+.guide-list {}
+
+.guide-container {
+    display: flex;
+}
+
+.guide-item {
+    display: flex;
+    background-color: var(--card--background-color);
+    width: 25%;
+    border-radius: 10px;
+    margin: 12px;
+    height: 100px;
+    padding: 0 15px;
+    border: 1px solid #6cc6cb;
+    font-family: '仓耳渔阳体', Arial, Helvetica, sans-serif;
+    box-shadow: var(--card-box-shadow);
+}
+
+.guide-item:hover {
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.guide-item img {
+    border-radius: 100%;
+    width: 25%;
+    padding: 0 6px;
+    margin: auto 4px;
+}
+
+.descr {
+    margin: 6px;
+    text-align: center;
+    padding: 12px;
 }
 
 /*
