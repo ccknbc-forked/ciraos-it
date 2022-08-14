@@ -6,9 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+        @font-face {
+            font-family: "仓耳渔阳体";
+            font-weight: 400;
+            src: url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Fi4RDPOLg63NXJkvMVl_X.woff2") format("woff2"),
+                url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Rv46fC6QtkfsmhCJwnJ8H.woff") format("woff");
+            font-display: swap;
+        }
+
         * {
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            background-color: rgb(2, 159, 2);
+        }
+
+        .area {
+            margin: 10% auto 0;
+            width: 40%;
+            display: block;
+            line-height: 1.4;
+            color: #fff;
+            font-family: '仓耳渔阳体';
+        }
+
+        .progress {
+            margin: 12px 6px;
         }
     </style>
     <title>404 | error</title>
@@ -18,7 +44,26 @@
 
     <!-- area -->
     <div class="area">
-        <a href="/">返回主页</a>
+
+        <p style="font-size: 120px;">:(</p>
+        <p style="font-size: 40px;">葱苓小居口版本遇到问题，需要重启。</p>
+        <p style="font-size: 40px;">我们不收集您的信息，请您点击下方链接回到主页。</p>
+
+        <div class="progress">0.01%已完成</div>
+
+        <div class="contact" style="display:flex;">
+            <div class="erweima" style="width:160px;">
+                <img src="" alt="qrcode">
+            </div>
+            <p style="width:210px;">有关问题的详细信息，请发布邮件到<a href="mailto:frank.ka@foxmail.com"
+                    style="color:#bbb;text-decoration:none;">frank.ka@foxmail.com</a>
+                <br>
+                123
+            </p>
+        </div>
+
+        <a href="/" style="color:#bbb;text-decoration:none;font-size: 20px;">返回主页</a>
+
     </div>
 
 </body>
