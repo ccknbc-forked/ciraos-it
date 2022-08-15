@@ -199,11 +199,11 @@ body {
     bottom: 0;
     line-height: 2;
     /* position: relative; */
-    display: block;
+    /* display: block; */
     /* border-top: 1px solid #000; */
     margin: 0 auto;
     width: 90%;
-    padding-top: 2px auto 0;
+    /* padding-top: 2px auto 0; */
 }
 
 .footer-info {
