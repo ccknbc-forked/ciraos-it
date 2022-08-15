@@ -43,7 +43,7 @@
 }
 
 body {
-    /* font-family: '仓耳渔阳体'; */
+    font-family: '仓耳渔阳体';
     background-color: var(--site-background-color);
 }
 
@@ -117,12 +117,11 @@ body {
 */
 
 .content {
-    height: max-content;
     line-height: 2;
     font-size: 20.2px;
-    padding-top: 28px;
+    padding-top: 8px;
     text-align: center;
-    margin: 18px auto;
+    margin: 0 auto;
     border-radius: 10px;
     height: 300px;
 }
@@ -131,6 +130,7 @@ body {
 
 .content-list {
     transition: all .5s;
+    height: max-content;
 }
 
 /*
@@ -145,7 +145,7 @@ body {
     width: 60%;
 }
 
-.guide-list {}
+/* .guide-list {} */
 
 .guide-container {
     display: flex;
@@ -160,7 +160,7 @@ body {
     height: 100px;
     padding: 0 15px;
     border: 1px solid #6cc6cb;
-    font-family: '仓耳渔阳体', Arial, Helvetica, sans-serif;
+    /* font-family: '仓耳渔阳体', Arial, Helvetica, sans-serif; */
     box-shadow: var(--card-box-shadow);
 }
 
@@ -200,11 +200,6 @@ body {
     display: flex;
     margin: 4px auto;
     width: max-content;
-}
-
-.footer-logo {
-    text-align: center;
-    width: 180px;
 }
 
 .footer-item {
