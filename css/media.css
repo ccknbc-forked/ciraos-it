@@ -8,4 +8,35 @@
         margin: 0;
         padding: 0;
     }
+
+    /* body {} */
+
+    .header {
+        height: 100vh;
+    }
+
+    .descr {
+        font-size: .76em;
+    }
+
+    /* .content {} */
+
+    .footer {
+        /* width: 90%; */
+        margin: 0 auto;
+    }
+
+    /* .footer-info {} */
+
+    .footer-item {
+        width: 126px;
+    }
+
+    .footer-item-title {
+        font-size: 10px;
+    }
+
+    .footer-item ul li a {
+        font-size: 8px;
+    }
 }
