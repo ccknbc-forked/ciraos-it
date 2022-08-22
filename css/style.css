@@ -53,7 +53,8 @@ body {
 
 .header {
     height: 100vh;
-    background: linear-gradient(to bottom right, #eae5c9 0%, #6cc6cb 100%);
+    /* background: linear-gradient(to bottom right, #eae5c9 0%, #6cc6cb 100%); */
+    background-color: #8076a3;
 }
 
 .header-menu {
@@ -67,7 +68,8 @@ body {
     justify-content: space-between;
     padding: 15px;
     box-shadow: var(--card-box-shadow);
-    background-color: rgb(238, 236, 236);
+    /* background-color: rgb(238, 236, 236); */
+    background-color: #ccc;
 }
 
 .header-menu:hover {
@@ -90,7 +92,7 @@ body {
 
 .info {
     width: 40%;
-    margin: 10% auto;
+    margin: 6% auto;
     text-align: center;
     line-height: 2.0;
     font-size: 24px;
@@ -98,11 +100,10 @@ body {
     display: block;
 }
 
-/* .avatar {} */
+/* .logo {} */
 
-.avatar img {
-    width: 14%;
-    border-radius: 100%;
+.logo img {
+    width: 70%;
 }
 
 /* .descr {} */
