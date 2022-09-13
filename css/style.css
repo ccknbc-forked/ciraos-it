@@ -122,21 +122,69 @@ body {
 
 .content {
     line-height: 2;
-    /* padding-top: 8px; */
-    margin: 10px;
 }
 
 /* .content:hover {} */
 
 .content-list {
-    transition: all .5s;
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.left-content {
+    width: calc(100% - 1 * 240px);
+    padding-right: 16px;
+    float: left;
+    overflow: hidden;
+}
+
+/* .left-content:hover {} */
+
+.right-content {
+    width: 240px;
+    float: right;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* .right-content:hover {} */
+
+.left-content-item {
+    background-color: var(--card--background-color);
+    box-shadow: var(--card-box-shadow);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    padding: 10px;
+}
+
+.left-content-item:hover {
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.left-content-item a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.right-content-item {
+    background-color: var(--card--background-color);
+    box-shadow: var(--card-box-shadow);
+    border-radius: 10px;
     text-align: center;
-    /* margin: 10px auto; */
-    /* height: 800px; */
-    height: max-content;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
+}
+
+.right-content-item:hover {
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.right-content-item img {
+    width: 100%;
+}
+
+.site {
+    font-size: 14px;
 }
 
 /*
@@ -146,30 +194,34 @@ body {
 .footer {
     bottom: 0;
     line-height: 2;
-    /* position: relative; */
-    /* display: block; */
-    border-top: 1px solid #000;
-    margin: 0 auto;
-    width: 90%;
+    position: relative;
+    border-top: 1.8px solid #000;
+    margin: 2px auto;
+    width: 80%;
     /* padding-top: 2px auto 0; */
 }
 
 .footer-info {
     display: flex;
     margin: 5px auto;
-    width: max-content;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.footer-info img {
+    border-radius: 100%;
+    width: 6%
 }
 
 .footer-item {
-    height: max-content;
-    width: 180px;
     display: block;
+    width: max-content;
+    margin: 2px auto;
 }
 
 .footer-item-title {
     font-weight: bolder;
     font-size: 18px;
-    /* font-family: '仓耳渔阳体', 'Courier New', Courier, monospace, sans-serif; */
 }
 
 .footer-item ul {
@@ -180,8 +232,4 @@ body {
     text-decoration: none;
     font-size: 15px;
     color: #000;
-}
-
-.social a {
-    text-decoration: none;
 }

@@ -28,8 +28,12 @@
 
     /* .footer-info {} */
 
+    .footer-info img {
+        width: 12%
+    }
+
     .footer-item {
-        width: 126px;
+        width: max-content;
     }
 
     .footer-item-title {
