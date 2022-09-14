@@ -15,15 +15,30 @@
         height: 100vh;
     }
 
-    .descr {
-        font-size: .76em;
+    .shici {
+        font-size: 16px;
     }
 
     /* .content {} */
 
+    .content-list {
+        display: block;
+        width: 80%;
+    }
+
+    .left-content {
+        width: 95%;
+    }
+
+    .right-content {
+        float: none;
+        width: 97%;
+    }
+
     .footer {
         /* width: 90%; */
-        margin: 0 auto;
+        /* margin: 0 auto; */
+        display: none;
     }
 
     /* .footer-info {} */

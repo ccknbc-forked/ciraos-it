@@ -53,7 +53,6 @@ body {
 
 .header {
     height: 100vh;
-    /* background: linear-gradient(to bottom right, #eae5c9 0%, #6cc6cb 100%); */
     background-color: #8076a3;
 }
 
@@ -62,35 +61,40 @@ body {
     font-size: 20px;
     margin: 0px auto;
     width: 80%;
-    display: flex;
     height: 40px;
     border-radius: 10px;
     justify-content: space-between;
     padding: 15px;
     box-shadow: var(--card-box-shadow);
-    /* background-color: rgb(238, 236, 236); */
     background-color: #ccc;
+    display: flex;
 }
 
 .header-menu:hover {
     box-shadow: var(--card-hover-box-shadow);
 }
 
+.header-menu a {
+    text-decoration: none;
+    color: var(--header-text-color);
+}
+
 .navagation-bar {
     display: flex;
+    justify-content: space-between;
 }
 
 .navagation-bar ul {
     list-style-type: none;
+    margin: auto 4px;
 }
 
 .navagation-bar ul li a {
     text-decoration: none;
-    margin: 5px 10px;
     color: var(--header-text-color);
 }
 
-.info {
+.shici {
     width: 40%;
     margin: 6% auto;
     text-align: center;
@@ -99,14 +103,6 @@ body {
     color: var(--header-text-color);
     display: block;
 }
-
-/* .logo {} */
-
-.logo img {
-    width: 70%;
-}
-
-/* .descr {} */
 
 /* #scrolldown {
     margin: 2px auto;
@@ -128,8 +124,8 @@ body {
 
 .content-list {
     display: flex;
-    width: 80%;
-    margin: 10px auto;
+    width: 60%;
+    margin: 18px auto;
 }
 
 .left-content {
@@ -140,15 +136,6 @@ body {
 }
 
 /* .left-content:hover {} */
-
-.right-content {
-    width: 240px;
-    float: right;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-/* .right-content:hover {} */
 
 .left-content-item {
     background-color: var(--card--background-color);
@@ -168,11 +155,26 @@ body {
     font-size: 18px;
 }
 
+.pages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-content {
+    width: 240px;
+    float: right;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* .right-content:hover {} */
+
 .right-content-item {
     background-color: var(--card--background-color);
     box-shadow: var(--card-box-shadow);
     border-radius: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .right-content-item:hover {
@@ -194,7 +196,7 @@ body {
 .footer {
     bottom: 0;
     line-height: 2;
-    position: relative;
+    /* position: relative; */
     border-top: 1.8px solid #000;
     margin: 2px auto;
     width: 80%;
