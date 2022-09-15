@@ -7,11 +7,14 @@
 */
 
 :root {
+    --font-color: #4c4948;
+    --footer-text-color: #bbb;
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
-    --footer-text-color: #bbb;
     --card--background-color: #fff;
     --site-background-color: #f4f4f4;
+    --color-meta: #888;
+    --text-color: #444;
 }
 
 @font-face {
@@ -43,7 +46,7 @@
 }
 
 body {
-    /* font-family: '仓耳渔阳体'; */
+    font-family: '仓耳渔阳体', Arial, Helvetica, sans-serif;
     background-color: var(--site-background-color);
 }
 
@@ -54,6 +57,10 @@ body {
 .header {
     height: 100vh;
     background-color: #8076a3;
+    background-image: url('/img/wallhaven-72rxqo.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header-menu {
@@ -77,6 +84,7 @@ body {
 .header-menu a {
     text-decoration: none;
     color: var(--header-text-color);
+    margin: auto 0;
 }
 
 .navagation-bar {
@@ -94,14 +102,13 @@ body {
     color: var(--header-text-color);
 }
 
-.shici {
+.header .shici {
     width: 40%;
     margin: 6% auto;
     text-align: center;
-    line-height: 2.0;
     font-size: 24px;
     color: var(--header-text-color);
-    display: block;
+    align-items: center;
 }
 
 /* #scrolldown {
@@ -117,7 +124,7 @@ body {
 */
 
 .content {
-    line-height: 2;
+    line-height: 3;
 }
 
 /* .content:hover {} */
@@ -125,14 +132,16 @@ body {
 .content-list {
     display: flex;
     width: 60%;
-    margin: 18px auto;
+    margin: 40px auto;
 }
 
 .left-content {
     width: calc(100% - 1 * 240px);
-    padding-right: 16px;
-    float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.left-content>.left-content-item:not(:first-child) {
+    margin-top: 20px;
 }
 
 /* .left-content:hover {} */
@@ -141,51 +150,50 @@ body {
     background-color: var(--card--background-color);
     box-shadow: var(--card-box-shadow);
     border-radius: 10px;
-    margin-bottom: 16px;
     padding: 10px;
+    color: var(--text-color);
 }
 
 .left-content-item:hover {
     box-shadow: var(--card-hover-box-shadow);
 }
 
-.left-content-item a {
-    text-decoration: none;
-    color: #000;
-    font-size: 18px;
+.left-content-item .date {
+    color: var(--color-meta);
 }
 
-.pages {
-    display: flex;
-    justify-content: space-between;
-}
-
-.right-content {
+.sidebar {
     width: 240px;
     float: right;
-    flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
+    padding-left: 15px;
+    /* color: var(--font-color); */
 }
 
-/* .right-content:hover {} */
+/* .sidebar:hover {} */
 
-.right-content-item {
+.sidebar-item {
     background-color: var(--card--background-color);
     box-shadow: var(--card-box-shadow);
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.right-content-item:hover {
+.sidebar>.sidebar-item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.sidebar-item:hover {
     box-shadow: var(--card-hover-box-shadow);
 }
 
-.right-content-item img {
+.sidebar-item img {
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.site {
+.sidebar-item .site {
     font-size: 14px;
 }
 
