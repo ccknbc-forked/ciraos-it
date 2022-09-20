@@ -15,10 +15,6 @@
         height: 100vh;
     }
 
-    .shici {
-        font-size: 16px;
-    }
-
     /* .content {} */
 
     .content-list {
@@ -26,13 +22,21 @@
         width: 80%;
     }
 
-    .left-content {
+    .shuoshuo {
         width: 95%;
     }
 
-    .right-content {
+    .sidebar {
         float: none;
-        width: 97%;
+        width: 95%;
+        padding-left: 0;
+        padding-top: 16px;
+    }
+
+    /* .sidebar>.sidebar-item:is(:first-child) {} */
+
+    .sidebar-item img {
+        width: 60%;
     }
 
     .footer {

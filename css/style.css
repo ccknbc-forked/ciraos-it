@@ -17,15 +17,10 @@
     --text-color: #444;
 }
 
-@font-face {
-    font-family: 'ZhuZiAYuanJWD';
-    src: url('/src/ZhuZiAYuanJWD.ttf');
-}
-
 /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
     font-family: "仓耳渔阳体";
-    font-weight: 400;
+    font-weight: bold;
     src: url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Fi4RDPOLg63NXJkvMVl_X.woff2") format("woff2"),
         url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/Rv46fC6QtkfsmhCJwnJ8H.woff") format("woff");
     font-display: swap;
@@ -51,25 +46,19 @@ body {
 }
 
 /*
- * Header
+ * --------------- Header --------------- *
 */
 
 .header {
-    height: 100vh;
-    background-color: #8076a3;
-    background-image: url('/img/wallhaven-72rxqo.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    height: 40px;
 }
 
 .header-menu {
     transition: all .5s;
-    font-size: 20px;
-    margin: 0px auto;
-    width: 80%;
-    height: 40px;
-    border-radius: 10px;
+    font-size: 18px;
+    /* width: 80%; */
+    height: 20px;
+    /* border-radius: 10px; */
     justify-content: space-between;
     padding: 15px;
     box-shadow: var(--card-box-shadow);
@@ -77,9 +66,7 @@ body {
     display: flex;
 }
 
-.header-menu:hover {
-    box-shadow: var(--card-hover-box-shadow);
-}
+/* .header-menu:hover {} */
 
 .header-menu a {
     text-decoration: none;
@@ -102,25 +89,8 @@ body {
     color: var(--header-text-color);
 }
 
-.header .shici {
-    width: 40%;
-    margin: 6% auto;
-    text-align: center;
-    font-size: 24px;
-    color: var(--header-text-color);
-    align-items: center;
-}
-
-/* #scrolldown {
-    margin: 2px auto;
-    bottom: 0;
-    width: 10px;
-    cursor: pointer;
-    position: relative;
-} */
-
 /*
- * content
+ * --------------- Content --------------- *
 */
 
 .content {
@@ -132,21 +102,21 @@ body {
 .content-list {
     display: flex;
     width: 60%;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
-.left-content {
+.shuoshuo {
     width: calc(100% - 1 * 240px);
     /* overflow: hidden; */
 }
 
-.left-content>.left-content-item:not(:first-child) {
+.shuoshuo>.shuoshuo-item:not(:first-child) {
     margin-top: 20px;
 }
 
-/* .left-content:hover {} */
+/* .shuoshuo:hover {} */
 
-.left-content-item {
+.shuoshuo-item {
     background-color: var(--card--background-color);
     box-shadow: var(--card-box-shadow);
     border-radius: 10px;
@@ -154,11 +124,11 @@ body {
     color: var(--text-color);
 }
 
-.left-content-item:hover {
+.shuoshuo-item:hover {
     box-shadow: var(--card-hover-box-shadow);
 }
 
-.left-content-item .date {
+.shuoshuo-item .date {
     color: var(--color-meta);
 }
 
@@ -198,7 +168,7 @@ body {
 }
 
 /*
- *footer
+ * --------------- Footer --------------- *
 */
 
 .footer {
@@ -209,12 +179,13 @@ body {
     margin: 2px auto;
     width: 80%;
     /* padding-top: 2px auto 0; */
+    clear: both;
 }
 
 .footer-info {
     display: flex;
     margin: 5px auto;
-    width: 40%;
+    width: 60%;
     justify-content: space-between;
 }
 
