@@ -9,6 +9,7 @@
 :root {
     --font-color: #4c4948;
     --footer-text-color: #bbb;
+    /* --footer-background-color: #eee; */
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
     --card--background-color: #fff;
@@ -174,24 +175,27 @@ body {
 .footer {
     bottom: 0;
     line-height: 2;
-    /* position: relative; */
-    border-top: 1.8px solid #000;
-    margin: 2px auto;
-    width: 80%;
-    /* padding-top: 2px auto 0; */
+    margin: 10px auto 0;
+    width: 98%;
     clear: both;
+    /* background-color: var(--foter-background-color); */
+    position: relative;
+    border-top: 1.8px solid #000;
+    /* padding-top: 2px auto 0; */
 }
 
 .footer-info {
     display: flex;
     margin: 5px auto;
-    width: 60%;
+    width: 100%;
+    max-width: 1200px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.footer-info img {
+.footer .footer-info img {
     border-radius: 100%;
-    width: 6%
+    width: 2em;
 }
 
 .footer-item {
@@ -201,8 +205,13 @@ body {
 }
 
 .footer-item-title {
-    font-weight: bolder;
+    font-weight: 550;
     font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.footer-item a {
+    text-decoration: none;
 }
 
 .footer-item ul {
@@ -213,4 +222,8 @@ body {
     text-decoration: none;
     font-size: 15px;
     color: #000;
+}
+
+.footer-item>a:not(:first-child) {
+    padding-left: 10px;
 }
