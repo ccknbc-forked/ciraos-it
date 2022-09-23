@@ -139,6 +139,7 @@ body {
     /* overflow: hidden; */
     padding-left: 15px;
     /* color: var(--font-color); */
+    position: relative;
 }
 
 /* .sidebar:hover {} */
