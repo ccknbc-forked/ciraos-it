@@ -51,7 +51,12 @@ body {
 */
 
 .header {
-    height: 40px;
+    height: 100vh;
+    background-image: url('/img/wallhaven-6ozvyl_1920x1080.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: 400;
 }
 
 .header-menu {
@@ -63,16 +68,18 @@ body {
     justify-content: space-between;
     padding: 15px;
     box-shadow: var(--card-box-shadow);
-    background-color: #ccc;
+    opacity: 1;
     display: flex;
+    color: #fff;
 }
 
 /* .header-menu:hover {} */
 
 .header-menu a {
     text-decoration: none;
-    color: var(--header-text-color);
     margin: auto 0;
+    padding-left: 6px;
+    color: #fff;
 }
 
 .navagation-bar {
@@ -90,12 +97,55 @@ body {
     color: var(--header-text-color);
 }
 
+.site-info {
+    top: 43%;
+    width: 100%;
+    position: absolute;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* #scroll-down {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    animation: scroll 1.5s infinite;
+    -webkit-animation: scroll 1.5s infinite;
+}
+
+#scroll-down i {
+    font-size: 30px;
+}
+
+@keyframes scroll {
+    0% {
+        top: 0;
+        opacity: .4;
+    }
+
+    50% {
+        top: -16px;
+        opacity: 1;
+        -ms-filter: none;
+        filter: none
+    }
+
+    100% {
+        top: 0;
+        opacity: .4;
+    }
+} */
+
 /*
  * --------------- Content --------------- *
 */
 
 .content {
-    line-height: 3;
+    line-height: 2.4;
+    margin: 40px auto 0;
 }
 
 /* .content:hover {} */
@@ -165,9 +215,7 @@ body {
     margin: 0;
 }
 
-.sidebar-item .site {
-    font-size: 14px;
-}
+/* .sidebar-item p {} */
 
 /*
  * --------------- Footer --------------- *
@@ -176,12 +224,12 @@ body {
 .footer {
     bottom: 0;
     line-height: 2;
-    margin: 10px auto 0;
+    margin: 60px auto 0;
     width: 98%;
     clear: both;
     /* background-color: var(--foter-background-color); */
     position: relative;
-    border-top: 1.8px solid #000;
+    /* border-top: 1.8px solid #000; */
     /* padding-top: 2px auto 0; */
 }
 
@@ -209,6 +257,7 @@ body {
     font-weight: 550;
     font-size: 18px;
     margin-bottom: 12px;
+    color: rgba(60, 60, 67, 0.6);
 }
 
 .footer-item a {

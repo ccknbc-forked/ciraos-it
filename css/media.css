@@ -11,8 +11,10 @@
 
     /* body {} */
 
-    .header {
-        height: 100vh;
+    /* .header {} */
+
+    .header .navagation-bar::after {
+        content: "=";
     }
 
     /* .content {} */
