@@ -101,7 +101,7 @@ body {
     top: 43%;
     width: 100%;
     position: absolute;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     text-align: center;
     font-size: 2em;
 }
