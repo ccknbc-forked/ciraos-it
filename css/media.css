@@ -12,37 +12,48 @@
     /* body {} */
 
     /* .header {} */
-
-    .header .navagation-bar::after {
+    .header-menu .navagation-bar::before {
         content: "=";
     }
 
-    /* .content {} */
+    /*
+     * content
+    */
 
-    .content-list {
+    .content {
         display: block;
-        width: 80%;
     }
 
-    .shuoshuo {
-        width: 95%;
+    .content .content-list {
+        width: 100%;
     }
 
-    .sidebar {
-        float: none;
-        width: 95%;
+    .content-list-item {
+        height: 16em;
+    }
+
+    .content-list .content-list-item .ss-info .ss-title {
+        font-size: 1.6em;
+    }
+
+    /*
+    * aside-content
+    */
+
+    .content .aside-content {
+        width: 100%;
+        margin: 10px auto 0;
         padding-left: 0;
-        padding-top: 16px;
     }
 
-    /* .sidebar>.sidebar-item:is(:first-child) {} */
+    /* .aside-content-item {} */
+    /* .aside-content>.aside-content-item:is(:first-child) {} */
 
-    .sidebar-item img {
-        width: 60%;
-    }
+    /*
+     * footer
+    */
 
     /* .footer {} */
-
     /* .footer-info {} */
 
     .footer-info img {
