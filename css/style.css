@@ -224,7 +224,7 @@ body {
     box-shadow: var(--card-box-shadow);
     border-radius: 10px;
     text-align: center;
-    padding: 20px 40px;
+    padding: 20px 0;
     border: 1px solid #00000000;
 }
 
