@@ -166,6 +166,7 @@ body {
     height: 18em;
     display: flex;
     align-items: center;
+    border: 1px solid #00000000;
 }
 
 .content-list>.content-list-item:not(:first-child) {
