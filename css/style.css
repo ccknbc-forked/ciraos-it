@@ -225,6 +225,7 @@ body {
     border-radius: 10px;
     text-align: center;
     padding: 20px 40px;
+    border: 1px solid #00000000;
 }
 
 .aside-content-item:hover {
