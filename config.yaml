@@ -1,0 +1,101 @@
+
+name: Ciraos Dynamic Client Worker
+
+cleaninterval: 1000*60
+
+hotpatch:
+  - https://raw.githubusercontent.com/ChenYFan/ClientWorker/gh-pages/cw.js
+  - https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/cw.js
+
+hotconfig:
+  - https://raw.githubusercontent.com/ciraos/ciraos-octo/main/config.yaml
+
+catch_rules:
+  - rule: _
+    transform_rules:
+      - search: _ 
+        action: fetch
+        fetch:
+          engine: fetch 
+      - search: (^4|^5) 
+        searchin: status 
+        action: return
+        return:
+          body: 呐呐呐~~页面不显示了，请联系管理员哦~~~
+          status: 503
+
+  #! 静态资源 CDN 选择
+  - rule: ^https\:\/\/((cdn|test1|quantil)\.jsdelivr\.net\/npm|npm\.elemecdn\.com|unpkg\.com)
+    transform_rules:
+      - search: _
+        replace:
+          - https://unpkg.com
+          - https://npm.elemecdn.com 
+          - https://npm.sourcegcdn.com 
+          - https://cdn.bilicdn.tk/npm 
+          - https://cdn.staticfile.org
+          - _
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false
+          timeout: 3000
+          cache:
+            expire: 1000*60*60*8
+            delay: 300
+
+  #! 
+  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+    transform_rules:
+      - search: _
+        replace:
+          - _
+          - https://unpkg.zhimg.com       # 回源已关闭，原缓存有效
+          - https://npm.elemecdn.com      # 2022/7/12 确认关闭回源，缓存有效
+          - https://code.bdstatic.com/npm # 确认关闭回源，缓存有效
+          # - https://npm.sourcegcdn.com    # 滥用封仓库，强制数字版本号
+          # - https://cdn.bilicdn.tk/npm    # 由GamerNoTitle提供的反代，请勿滥用:D
+          - _
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false
+          timeout: 3000
+          cache:
+            expire: 1000*60*60*8
+            delay: 300
+
+  #! 
+  - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
+    transform_rules:
+      - search: _
+        replace:
+          - _
+          - https://cdn.bootcdn.net/ajax/libs
+          - https://lib.baomitu.com
+          - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs    # 重庆邮电
+          - https://cdn.staticfile.org
+          - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs  # 南大
+          - https://cdnjs.sourcegcdn.com/ajax/libs          # 全同步 https://cdnjs.cloudflare.com
+          - _
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false
+          timeout: 3000
+          cache:
+            expire: 1000*60*60*8
+            delay: 300
+
+  #! 
+  # - rule: ^https\:\/\/imagecdndomain/(.*))\.jpg
+  #   transform_rules:
+  #     - search: image\/webp
+  #       searchin: header
+  #       searchkey: Accept
+  #       replace: .webp
+  #       replacein: url
+  #       replacekey: .jpg
