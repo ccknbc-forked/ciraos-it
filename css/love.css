@@ -1,0 +1,126 @@
+/*
+ * css of love.html
+*/
+
+/*
+ * header
+*/
+
+.header {
+    height: 40px;
+    background-image: none;
+    background-color: var(--card--background-color);
+}
+
+.header .header-menu a,
+.header .navagation-bar ul li a,
+.header div a {
+    color: #000;
+}
+
+.header .navagation-bar,
+.header div {
+    margin: auto 0;
+}
+
+/*
+ * content
+*/
+
+/* .content {} */
+
+.content .content-list-one {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-list-one img {
+    width: 25%;
+    border-radius: 100%;
+}
+
+.content-list-one .aixin {
+    font-size: 18 0px;
+    color: red;
+    animation: heartbeat 2s infinite;
+    margin: auto;
+}
+
+@keyframes heartbeat {
+    0% {
+        font-size: 180px;
+    }
+
+    25% {
+        font-size: 170px;
+    }
+
+    50% {
+        font-size: 180px;
+    }
+
+    75% {
+        font-size: 170px;
+    }
+
+    100% {
+        font-size: 180px;
+    }
+}
+
+.content-list-one .count {
+    font-size: 30px;
+    color: blue;
+}
+
+.content-list-one #counting {
+    margin: 20px 0 0;
+    font-size: 20px;
+    color: blueviolet;
+}
+
+.content-list-one .zhufuban {
+    font-size: 28px;
+}
+
+.content-list-one .zhufu-list {
+    width: 70%;
+    background-color: var(--card--background-color);
+    height: 4em;
+    border-radius: 10px;
+    margin: auto;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    box-shadow: var(--card-box-shadow);
+}
+
+.content-list-one .zhufu-list:hover {
+    border: 2px solid blue;
+    box-shadow: var(--card-hover-box-shadow);
+}
+
+.content-list-one .zhufu-list img {
+    width: 60px;
+    height: 60px;
+    margin: auto 0;
+}
+
+.content-list-one .zhufu-list p {
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.content-list-one .content-list-title {
+    font-size: 28px;
+    text-align: center;
+}
+
+.content>.content-list-one:not(:first-child) {
+    margin-top: 60px;
+}
+
+.content>.content-list-one>.zhufu-list:not(:first-child) {
+    margin-top: 10px;
+}

@@ -12,9 +12,7 @@
     /* body {} */
 
     /* .header {} */
-    .header-menu .navagation-bar::before {
-        content: "=";
-    }
+    /* .header-menu .navagation-bar::before {} */
 
     /*
      * content
