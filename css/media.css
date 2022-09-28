@@ -12,7 +12,13 @@
     /* body {} */
 
     /* .header {} */
+<<<<<<< HEAD
     /* .header-menu .navagation-bar::before {} */
+=======
+    /* .header-menu .navagation-bar::before {
+        content: "=";
+    } */
+>>>>>>> 6b9614cdf0760b3c72069d3151175b282aaf2f62
 
     /*
      * content
