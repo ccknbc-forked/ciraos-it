@@ -12,67 +12,16 @@
     /* body {} */
 
     /* .header {} */
-<<<<<<< HEAD
-    /* .header-menu .navagation-bar::before {} */
-=======
-    /* .header-menu .navagation-bar::before {
-        content: "=";
-    } */
->>>>>>> 6b9614cdf0760b3c72069d3151175b282aaf2f62
 
     /*
      * content
     */
 
-    .content {
-        display: block;
-    }
-
-    .content .content-list {
-        width: 100%;
-    }
-
-    .content-list-item {
-        height: 16em;
-    }
-
-    .content-list .content-list-item .ss-info .ss-title {
-        font-size: 1.6em;
-    }
-
-    /*
-    * aside-content
-    */
-
-    .content .aside-content {
-        width: 100%;
-        margin: 10px auto 0;
-        padding-left: 0;
-    }
-
-    /* .aside-content-item {} */
-    /* .aside-content>.aside-content-item:is(:first-child) {} */
+    /* .content {} */
 
     /*
      * footer
     */
 
     /* .footer {} */
-    /* .footer-info {} */
-
-    .footer-info img {
-        width: 12%
-    }
-
-    .footer-item {
-        width: max-content;
-    }
-
-    .footer-item-title {
-        font-size: 10px;
-    }
-
-    .footer-item ul li a {
-        font-size: 8px;
-    }
 }
