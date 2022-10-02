@@ -1,5 +1,5 @@
 
-name: Ciraos Dynamic Client Worker
+name: Ciraos_Dynamic_Client_Worker
 
 cleaninterval: 1000*60
 
@@ -8,11 +8,24 @@ hotpatch:
   - https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/cw.js
 
 hotconfig:
+  - https://blog.ciraos.top/config.yaml
   - https://raw.githubusercontent.com/ciraos/ciraos-octo/main/config.yaml
+  - https://github.com/ciraos/ciraos-octo/blob/main/config.yaml
 
 catch_rules:
   - rule: _
     transform_rules:
+      # - search:
+      #   replace:
+      #     - blog.ciraos.top
+      #     - _
+      #   action: fetch
+      #   fetch:
+      #     status: 200
+      #     engine: parallel
+      #     preflight: false
+      #     timeout: 30000
+      #     delay: 4000
       - search: _ 
         action: fetch
         fetch:
@@ -45,57 +58,10 @@ catch_rules:
             expire: 1000*60*60*8
             delay: 300
 
-  #! 
-  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+  #! 不劫持（丢给浏览器）
+  #! 2.8.1新增，跳过cw规则
+  #! （现在已经不再需要，但为了兼容性和避免未知bug建议留下此配置）
+  - rule: .*
     transform_rules:
       - search: _
-        replace:
-          - _
-          - https://unpkg.zhimg.com       # 回源已关闭，原缓存有效
-          - https://npm.elemecdn.com      # 2022/7/12 确认关闭回源，缓存有效
-          - https://code.bdstatic.com/npm # 确认关闭回源，缓存有效
-          # - https://npm.sourcegcdn.com    # 滥用封仓库，强制数字版本号
-          # - https://cdn.bilicdn.tk/npm    # 由GamerNoTitle提供的反代，请勿滥用:D
-          - _
-        action: fetch
-        fetch:
-          status: 200
-          engine: parallel
-          preflight: false
-          timeout: 3000
-          cache:
-            expire: 1000*60*60*8
-            delay: 300
-
-  #! 
-  - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
-    transform_rules:
-      - search: _
-        replace:
-          - _
-          - https://cdn.bootcdn.net/ajax/libs
-          - https://lib.baomitu.com
-          - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs    # 重庆邮电
-          - https://cdn.staticfile.org
-          - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs  # 南大
-          - https://cdnjs.sourcegcdn.com/ajax/libs          # 全同步 https://cdnjs.cloudflare.com
-          - _
-        action: fetch
-        fetch:
-          status: 200
-          engine: parallel
-          preflight: false
-          timeout: 3000
-          cache:
-            expire: 1000*60*60*8
-            delay: 300
-
-  #! 
-  # - rule: ^https\:\/\/imagecdndomain/(.*))\.jpg
-  #   transform_rules:
-  #     - search: image\/webp
-  #       searchin: header
-  #       searchkey: Accept
-  #       replace: .webp
-  #       replacein: url
-  #       replacekey: .jpg
+        action: skip
