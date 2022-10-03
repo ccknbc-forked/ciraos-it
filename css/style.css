@@ -6,7 +6,10 @@
  * --------------- General --------------- *
 */
 
-/* :root {} */
+:root {
+    --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
+    --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
+}
 
 /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
@@ -28,11 +31,7 @@
 
 body {
     font-family: '阿里妈妈数黑体', Arial, Helvetica, sans-serif;
-    /* background-color: var(--site-background-color); */
-    background-image: url('/img/qiqi.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #f07c82;
 }
 
 /*
@@ -75,8 +74,7 @@ body {
 */
 
 .content {
-    /* line-height: 2.4; */
-    margin: 20px auto 40px;
+    margin: 10px auto 20px;
     width: 80%;
     text-align: center;
     overflow: hidden;
@@ -150,12 +148,20 @@ body {
     display: flex;
     width: 40%;
     margin: 20px auto 0;
-    text-align: center;
-    justify-content: space-evenly;
+    background-color: #fbecde;
+    border-radius: 10px;
+    box-shadow: var(--card-box-shadow);
+    height: 40px;
+}
+
+.social:hover {
+    box-shadow: var(--card-hover-box-shadow);
 }
 
 .social ul {
     list-style-type: none;
+    border-radius: 100%;
+    margin: auto;
 }
 
 .social ul li a {

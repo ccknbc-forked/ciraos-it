@@ -8,9 +8,9 @@ hotpatch:
   - https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/cw.js
 
 hotconfig:
-  - https://blog.ciraos.top/config.yaml
-  - https://raw.githubusercontent.com/ciraos/ciraos-octo/main/config.yaml
-  - https://github.com/ciraos/ciraos-octo/blob/main/config.yaml
+  - https://www.ciraos.top/config.yaml
+  - https://raw.githubusercontent.com/ciraos/ciraos-it/main/config.yaml
+  - https://github.com/ciraos/ciraos-it/blob/main/config.yaml
 
 catch_rules:
   - rule: _
@@ -26,10 +26,16 @@ catch_rules:
       #     preflight: false
       #     timeout: 30000
       #     delay: 4000
+      # - search: \#.+
+      #   searchin: url
+      #   replace: ''
       - search: _ 
         action: fetch
         fetch:
           engine: fetch 
+      - search: \.html$
+        header:
+          Content-Type: text/html;charset=utf-8
       - search: (^4|^5) 
         searchin: status 
         action: return
@@ -37,15 +43,17 @@ catch_rules:
           body: 呐呐呐~~页面不显示了，请联系管理员哦~~~
           status: 503
 
-  #! 静态资源 CDN 选择
-  - rule: ^https\:\/\/((cdn|test1|quantil)\.jsdelivr\.net\/npm|npm\.elemecdn\.com|unpkg\.com)
+  #! 静态资源 CDN 选择 - NPM
+  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|npm\.elemecdn\.com|unpkg\.com)
     transform_rules:
       - search: _
         replace:
           - https://unpkg.com
-          - https://npm.elemecdn.com 
-          - https://npm.sourcegcdn.com 
-          - https://cdn.bilicdn.tk/npm 
+          - https://unpkg.zhimg.com
+          - https://npm.elemecdn.com
+          - https://code.bdstatic.com/npm
+          - https://npm.sourcegcdn.com
+          - https://cdn.bilicdn.tk/npm
           - https://cdn.staticfile.org
           - _
         action: fetch
@@ -57,11 +65,46 @@ catch_rules:
           cache:
             expire: 1000*60*60*8
             delay: 300
+  
+  #! 静态资源 CDN 选择 - CDNJS
+  - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
+    transform_rules:
+      - search: _
+        replace:
+          - _
+          - https://cdn.bootcdn.net/ajax/libs
+          - https://lib.baomitu.com
+          - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs    # 重庆邮电
+          - https://cdn.staticfile.org
+          - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs  # 南大
+          - https://cdnjs.sourcegcdn.com/ajax/libs          # 全同步 https://cdnjs.cloudflare.com
+          - _
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false
+          timeout: 3000
+          cache:
+            expire: 1000*60*60*8
+            delay: 300
+
+  #! 前端兼容webp
+  # - rule: ^https\:\/\/imagecdndomain/(.*))\.jpg
+  #   transform_rules:
+  #     - search: image\/webp
+  #       searchin: header
+  #       searchkey: Accept
+  #       replace: .webp
+  #       replacein: url
+  #       replacekey: .jpg
+
+  #! 静态资源 CDN 选择 - Github
 
   #! 不劫持（丢给浏览器）
   #! 2.8.1新增，跳过cw规则
   #! （现在已经不再需要，但为了兼容性和避免未知bug建议留下此配置）
-  - rule: .*
-    transform_rules:
-      - search: _
-        action: skip
+  # - rule: .*
+  #   transform_rules:
+  #     - search: _
+  #       action: skip
