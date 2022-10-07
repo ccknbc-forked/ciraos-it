@@ -24,14 +24,22 @@
     font-size: 20px !important;
 }
 
+/* 把我们所有标签的内外边距清零 */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+button,
+input {
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    border: 0;
+    outline: none;
 }
 
 body {
     font-family: '阿里妈妈数黑体', Arial, Helvetica, sans-serif;
-    background-color: #f07c82;
 }
 
 /*
@@ -39,34 +47,51 @@ body {
 */
 
 .header {
-    height: 40px;
-    padding: 10px;
-    width: 60%;
-    margin: 0 auto;
+    line-height: 56px;
+    width: 100%;
     transition: all .5s;
-}
-
-.header-menu {
-    font-size: 1.3em;
-    /* width: 80%; */
-    height: 40px;
-    /* border-radius: 10px; */
-    justify-content: space-between;
-    /* padding: 15px; */
-    opacity: 1;
+    background-color: #1f2233;
     display: flex;
-    margin: auto;
+    font-size: 1em;
+    justify-content: space-evenly;
 }
 
-/* .header-menu:hover {} */
-
-.header-menu a {
+.header a {
     text-decoration: none;
-    color: #411c35;
+    color: #fff;
 }
 
-.header-menu p {
-    color: #63071c;
+.header .daohanglan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .daohanglan ul {
+    list-style-type: none;
+}
+
+.header .daohanglan ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header>.daohanglan>ul:not(:first-child) {
+    margin-left: 15px;
+}
+
+/* .header .search {} */
+
+.header .search input {
+    height: 22px;
+}
+
+.header .search button {
+    border: 1px solid #f4f4f4;
+    cursor: pointer;
+}
+
+.header div {
+    color: #fff;
 }
 
 /*
@@ -74,16 +99,9 @@ body {
 */
 
 .content {
-    margin: 10px auto 20px;
+    margin: 40px auto 60px;
     width: 80%;
     text-align: center;
-    overflow: hidden;
-}
-
-.content img {
-    width: 10%;
-    border-radius: 100%;
-    animation: avatar-effects 10s linear infinite;
 }
 
 /* .content img:hover {} */
