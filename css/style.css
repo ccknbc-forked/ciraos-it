@@ -20,6 +20,15 @@
     font-display: swap;
 }
 
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: "阿里巴巴普惠体";
+    font-weight: 600;
+    src: url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/wAsNbh1oEATtAXdWqu00i.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/MzCJI3CjOxLL0yTVuljIW.woff") format("woff");
+    font-display: swap;
+}
+
 .iconfont {
     font-size: 20px !important;
 }
@@ -28,18 +37,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-button,
-input {
-    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
-    border: 0;
-    outline: none;
+    /* box-sizing: border-box; */
 }
 
 body {
-    font-family: '阿里妈妈数黑体', Arial, Helvetica, sans-serif;
+    font-family: '阿里巴巴普惠体', Arial, Helvetica, sans-serif;
 }
 
 /*
@@ -61,37 +63,27 @@ body {
     color: #fff;
 }
 
-.header .daohanglan {
+.daohanglan {
     display: flex;
     justify-content: space-between;
 }
 
-.header .daohanglan ul {
+.daohanglan ul {
     list-style-type: none;
 }
 
-.header .daohanglan ul li a {
+.daohanglan ul:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.daohanglan ul li a {
     color: #fff;
     text-decoration: none;
 }
 
 .header>.daohanglan>ul:not(:first-child) {
     margin-left: 15px;
-}
-
-/* .header .search {} */
-
-.header .search input {
-    height: 22px;
-}
-
-.header .search button {
-    border: 1px solid #f4f4f4;
-    cursor: pointer;
-}
-
-.header div {
-    color: #fff;
 }
 
 /*
@@ -196,17 +188,41 @@ body {
 .footer {
     bottom: 0;
     line-height: 1.8;
-    margin: 0 auto;
+    margin: 20px auto 10px;
     width: 100%;
     clear: both;
-    position: absolute;
+    position: relative;
     /* border-top: 1.8px solid #4a4035; */
-    text-align: center;
+    /* text-align: center; */
     padding: 10px 0 20px;
+    display: block;
+    background-color: #f5f7fa;
 }
 
-.footer p a {
-    margin: 0 5px;
-    color: #753117;
+.footer-info {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* width: 100%;
+    max-width: 1200px; */
+}
+
+/* .footer-info-item {} */
+
+/* .footer-info-title {} */
+
+.footer-info-item ul {
+    list-style-type: none;
+}
+
+.footer-info-item ul li a {
     text-decoration: none;
+}
+
+/*
+ * Dark mode
+*/
+
+@media screen and (prefers-color-scheme: dark) {
+    /* .header a {} */
 }

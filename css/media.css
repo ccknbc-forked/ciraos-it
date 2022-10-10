@@ -4,10 +4,10 @@
 
 /* 屏幕可视窗口尺寸小于'720'像素的设备 */
 @media screen and (max-width: 720px) {
-    /* * {
+    * {
         margin: 0;
         padding: 0;
-    } */
+    }
 
     /* body {} */
 
@@ -15,7 +15,15 @@
      * header
     */
 
-    /* .header {} */
+    .header {
+        display: block;
+    }
+
+    .header a {
+        padding: 12px;
+    }
+
+    /* .header .daohanglan {} */
 
     /*
      * content
@@ -27,5 +35,7 @@
      * footer
     */
 
-    /* .footer {} */
+    .footer {
+        position: absolute;
+    }
 }
