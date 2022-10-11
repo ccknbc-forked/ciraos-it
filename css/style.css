@@ -151,13 +151,13 @@ footer {
 
 .footer-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     flex-flow: row wrap;
     width: 100%;
     max-width: 1200px;
     margin: 10px auto 0;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
 }
 
 footer>.footer-info:not(:first-child) {
@@ -184,9 +184,7 @@ footer>.footer-info:not(:first-child) {
  * title
 */
 
-.footer-info-title {
-    font-weight: 500;
-}
+/* .footer-info-title {} */
 
 /*
  *
