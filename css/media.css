@@ -16,8 +16,8 @@
     */
 
     header {
-        display: flex;
-        flex-wrap: wrap;
+        display: block;
+        /* flex-wrap: wrap; */
     }
 
     /* header a {} */
