@@ -17,6 +17,7 @@
 
     .header {
         display: block;
+        opacity: wrap;
     }
 
     .header a {
