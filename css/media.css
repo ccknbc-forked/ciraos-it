@@ -16,7 +16,7 @@
     */
 
     header {
-        display: block;
+        display: flex;
         flex-wrap: wrap;
     }
 
@@ -39,5 +39,6 @@
    
    footer {
         position: absolute;
+        background-color: #f4f4f4;
     }
 }
