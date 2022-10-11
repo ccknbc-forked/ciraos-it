@@ -15,14 +15,12 @@
      * header
     */
 
-    .header {
+    header {
         display: block;
-        opacity: wrap;
+        flex-wrap: wrap;
     }
 
-    .header a {
-        padding: 12px;
-    }
+    /* header a {} */
 
     /* .header .daohanglan {} */
 
@@ -31,12 +29,15 @@
     */
 
     /* .content {} */
+    .content-list img {
+       width: 14%;
+   }
 
     /*
      * footer
     */
-
-    .footer {
+   
+   footer {
         position: absolute;
     }
 }
