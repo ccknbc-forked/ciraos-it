@@ -28,9 +28,11 @@
      * content
     */
 
-    /* .content {} */
+    .content {
+       color: #fff;
+   }
     .content-list img {
-       width: 14%;
+       width: 20%;
    }
 
     /*
