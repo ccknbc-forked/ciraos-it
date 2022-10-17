@@ -147,7 +147,7 @@ footer {
     width: 100%;
     clear: both;
     position: relative;
-    border-top: 1.8px solid #4a4035;
+    /* border-top: 1.8px solid #4a4035; */
     display: block;
     background-color: #f5f7fa;
 }
@@ -180,6 +180,7 @@ footer>.footer-info:not(:first-child) {
 
 .footer-info-group ul li a {
     text-decoration: none;
+    color: #1f2233;
 }
 
 /*
