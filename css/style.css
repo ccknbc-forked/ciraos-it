@@ -55,17 +55,20 @@ header {
     background-color: #1f2233;
     display: flex;
     font-size: 1em;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-header a {
+header .home {
+    width: max-content;
+}
+
+header .home a {
     text-decoration: none;
     color: #fff;
 }
 
 header .daohanglan {
     display: flex;
-    justify-content: space-between;
 }
 
 header .daohanglan ul {
@@ -151,13 +154,12 @@ footer {
 
 .footer-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     flex-flow: row wrap;
     width: 100%;
     max-width: 1200px;
     margin: 10px auto 0;
-    /* padding: 0 1rem; */
 }
 
 footer>.footer-info:not(:first-child) {
@@ -184,7 +186,9 @@ footer>.footer-info:not(:first-child) {
  * title
 */
 
-/* .footer-info-title {} */
+.footer-info-title {
+    font-weight: 500;
+}
 
 /*
  *
@@ -192,7 +196,7 @@ footer>.footer-info:not(:first-child) {
 
 .footer-info-item {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
 .footer-info-item ul {

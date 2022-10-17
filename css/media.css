@@ -15,32 +15,44 @@
      * header
     */
 
-    header {
+    .header {
         display: block;
-        /* flex-wrap: wrap; */
     }
 
-    /* header a {} */
+    .header .home {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-    /* .header .daohanglan {} */
+    .header .daohanglan {
+        width: 80%;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
 
     /*
      * content
     */
 
     .content {
-       color: #fff;
-   }
+        margin: 40px auto 20px;
+    }
+
     .content-list img {
-       width: 20%;
-   }
+        width: 30%;
+    }
 
     /*
      * footer
     */
-   
-   footer {
-        position: absolute;
-        background-color: #f4f4f4;
+
+    footer {
+        position: relative;
+    }
+
+    .footer-info {
+        justify-content: space-around;
+        margin: 6px auto 0;
     }
 }
