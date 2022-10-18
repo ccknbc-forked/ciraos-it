@@ -53,6 +53,6 @@
 
     .footer-info {
         justify-content: space-between;
-        margin: 6px auto 0;
+        /* margin: 6px auto 0; */
     }
 }
