@@ -52,7 +52,7 @@
     }
 
     .footer-info {
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 6px auto 0;
     }
 }
