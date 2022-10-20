@@ -209,9 +209,9 @@ footer>.footer-info:not(:first-child) {
     color: #1f2233;
 }
 
-.footer-info-item>ul:not(:first-child) {
+/* .footer-info-item>ul:not(:first-child) {
     margin-left: 5px;
-}
+} */
 
 /*
  * Dark mode
