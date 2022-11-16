@@ -6,10 +6,10 @@
  * ***** * scroll-down * ***** *
  */
 
-/* $('#scrolldown').click(
+/* $('#scroll-down').click(
     function () {
         $('html,body').animate({
-            scrollTop: document.getElementById('content')[0].scrollHeight
+            scrollTop: document.getElementById('scroll-down')[0].scrollHeight
         }, 2000); return false;
     }
 ); */

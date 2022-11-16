@@ -19,16 +19,20 @@
         display: block;
     }
 
-    .header .home {
-        width: 80%;
-        margin: 0 auto;
+    .navigation {
+        display: block;
+    }
+
+    .navigation .home {
+        width: 100%;
+        margin: 6px auto;
         text-align: center;
     }
 
-    .header .daohanglan {
+    .navigation .daohanglan {
         width: 80%;
         margin: 0 auto;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     /*

@@ -9,6 +9,9 @@
 :root {
     --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
     --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
+    --site-background-color: #f4f4f4;
+    --card-background-color: #fff;
+    --footer-background-color: #fffefa;
 }
 
 /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
@@ -29,8 +32,12 @@
     font-display: swap;
 }
 
-.iconfont {
-    font-size: 20px !important;
+.icon {
+    width: 2.6em;
+    height: 2.6em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }
 
 /* 把我们所有标签的内外边距清零 */
@@ -41,7 +48,8 @@
 }
 
 body {
-    font-family: '阿里巴巴普惠体', Arial, Helvetica, sans-serif;
+    font-family: '阿里妈妈数黑体', Arial, Helvetica, sans-serif;
+    background-color: var(--site-background-color);
 }
 
 /*
@@ -49,43 +57,113 @@ body {
 */
 
 header {
-    line-height: 56px;
+    /* line-height: 56px; */
     width: 100%;
     transition: all .5s;
     background-color: #1f2233;
+    /* display: block; */
+    /* font-size: 1em; */
+    /* justify-content: space-evenly; */
+    height: 100vh;
+}
+
+.navigation {
     display: flex;
-    font-size: 1em;
-    justify-content: space-around;
+    height: 40px;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all .5s;
+    opacity: 1;
+    /* background-color: #17548f5c; */
+    filter: none;
 }
 
-header .home {
-    width: max-content;
-}
+/* .home {} */
 
-header .home a {
+.home a {
     text-decoration: none;
     color: #fff;
+    font-size: 1em;
+    /* font-weight: 700; */
+    letter-spacing: 2.4px;
 }
 
-header .daohanglan {
+.daohanglan {
     display: flex;
 }
 
-header .daohanglan ul {
+.daohanglan ul {
     list-style-type: none;
 }
 
-header .daohanglan ul:hover {
-    background-color: gray;
-}
+/* .daohanglan ul:hover {} */
 
-header .daohanglan ul li a {
+.daohanglan ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1.66px;
 }
 
-header>.daohanglan>ul:not(:first-child) {
+.navigation>.daohanglan>ul:not(:first-child) {
     margin-left: 15px;
+}
+
+.site-info {
+    width: 100%;
+    text-align: center;
+    top: 43%;
+    position: absolute;
+}
+
+#search-box {
+    width: 100%;
+    margin: 20px auto 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+#search-box input {
+    width: 310px;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    /* background-image: url(images/search.jpg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 5px center; */
+    padding: 0 0 0 10px;
+    border-radius: 10px;
+}
+
+#scroll-down {
+    bottom: 20px;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 10px;
+    animation: scroll-down-effects 6s linear infinite;
+    clear: both;
+    height: 60px;
+}
+
+@keyframes scroll-down-effects {
+    0% {
+        bottom: 0;
+        opacity: .4
+    }
+
+    50% {
+        bottom: -16px;
+        opacity: 1;
+        -ms-filter: none;
+        filter: none
+    }
+
+    100% {
+        bottom: 0;
+        opacity: .4
+    }
 }
 
 /*
@@ -93,48 +171,20 @@ header>.daohanglan>ul:not(:first-child) {
 */
 
 .content {
-    margin: 10px auto 20px;
-    width: 80%;
+    margin: 0 auto 20px;
+    /* width: 100%; */
+    background-color: var(--card-background-color);
 }
 
 /* .content:hover {} */
 
-/* .content-list {} */
+.content-list {
+    width: 100%;
+    text-align: center;
+}
 
 .content>.content-list:not(:first-child) {
     margin-top: 20px;
-}
-
-.content-list img {
-    width: 10%;
-    border-radius: 100%;
-    animation: avatar-effects 12s linear infinite;
-}
-
-.content-list img:hover {
-    animation-play-state: paused;
-}
-
-@keyframes avatar-effects {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(90deg);
-    }
-
-    50% {
-        transform: rotate(180deg);
-    }
-
-    75% {
-        transform: rotate(270deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /*
@@ -148,70 +198,18 @@ footer {
     clear: both;
     position: relative;
     /* border-top: 1.8px solid #4a4035; */
-    display: block;
-    background-color: #f5f7fa;
+    /* display: block; */
+    /* padding: 40px 0 120px 0; */
 }
 
-.footer-info {
+.footer-group {
     display: flex;
-    justify-content: space-evenly;
+    background-color: var(--footer-background-color);
+    height: 50px;
+    align-items: center;
+    padding-left: 10px;
     flex-wrap: wrap;
-    flex-flow: row wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: 10px auto 0;
 }
-
-footer>.footer-info:not(:first-child) {
-    margin-top: 20px;
-}
-
-/*
- *
-*/
-
-.footer-info-group {
-    min-width: 120px;
-}
-
-.footer-info-group ul {
-    list-style-type: none;
-}
-
-.footer-info-group ul li a {
-    text-decoration: none;
-    color: #1f2233;
-}
-
-/*
- * title
-*/
-
-.footer-info-title {
-    font-weight: 500;
-}
-
-/*
- *
-*/
-
-.footer-info-item {
-    display: flex;
-    /* justify-content: space-evenly; */
-}
-
-.footer-info-item ul {
-    list-style-type: none;
-}
-
-.footer-info-item ul li a {
-    text-decoration: none;
-    color: #1f2233;
-}
-
-/* .footer-info-item>ul:not(:first-child) {
-    margin-left: 5px;
-} */
 
 /*
  * Dark mode
