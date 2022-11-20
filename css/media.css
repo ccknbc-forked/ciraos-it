@@ -15,12 +15,12 @@
      * header
     */
 
-    .header {
-        display: block;
-    }
+    /* .header {} */
 
     .navigation {
         display: block;
+        height: 60px;
+        margin: auto 0;
     }
 
     .navigation .home {
@@ -39,12 +39,8 @@
      * content
     */
 
-    .content {
-        margin: 40px auto 20px;
-    }
-
-    .content-list img {
-        width: 30%;
+    .first-content-list .avatar img {
+        width: 40%;
     }
 
     /*
@@ -52,11 +48,6 @@
     */
 
     footer {
-        position: relative;
-    }
-
-    .footer-info {
-        justify-content: space-between;
-        /* margin: 6px auto 0; */
+        position: absolute;
     }
 }
