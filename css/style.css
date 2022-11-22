@@ -32,14 +32,6 @@
     font-display: swap;
 }
 
-.icon {
-    width: 1.6em;
-    height: 1.6em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-}
-
 /* 把我们所有标签的内外边距清零 */
 * {
     margin: 0;
@@ -177,6 +169,7 @@ header {
 
 .social ul li a {
     text-decoration: none;
+    color: #000;
 }
 
 .social>ul:not(:first-child) {

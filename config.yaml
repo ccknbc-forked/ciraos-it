@@ -1,5 +1,5 @@
 
-name: Ciraos_Dynamic_Client_Worker
+name: Dynamic_ciraos_Client_Worker
 
 cleaninterval: 1000*60
 
@@ -8,24 +8,13 @@ hotpatch:
   - https://cdn.jsdelivr.net/gh/ChenYFan/ClientWorker/cw.js
 
 hotconfig:
-  - https://www.ciraos.top/config.yaml
+  - https://it.itciraos.cn/config.yaml
   - https://raw.githubusercontent.com/ciraos/ciraos-it/main/config.yaml
   - https://github.com/ciraos/ciraos-it/blob/main/config.yaml
 
 catch_rules:
   - rule: _
     transform_rules:
-      # - search:
-      #   replace:
-      #     - blog.ciraos.top
-      #     - _
-      #   action: fetch
-      #   fetch:
-      #     status: 200
-      #     engine: parallel
-      #     preflight: false
-      #     timeout: 30000
-      #     delay: 4000
       # - search: \#.+
       #   searchin: url
       #   replace: ''
@@ -42,8 +31,20 @@ catch_rules:
         return:
           body: 呐呐呐~~页面不显示了，请联系管理员哦~~~
           status: 503
+      # - search:
+      #   replace:
+      #     - www.itciraos.cn
+      #     - ciraos.github.io
+      #     - _
+      #   action: fetch
+      #   fetch:
+      #     status: 200
+      #     engine: parallel
+      #     preflight: false
+      #     timeout: 30000
+      #     delay: 4000
 
-  #! 静态资源 CDN 选择 - NPM
+  #! 并发CDN流量请求 - NPM
   - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|npm\.elemecdn\.com|unpkg\.com)
     transform_rules:
       - search: _
@@ -65,8 +66,8 @@ catch_rules:
           cache:
             expire: 1000*60*60*8
             delay: 300
-  
-  #! 静态资源 CDN 选择 - CDNJS
+
+  #! 并发CDN流量请求 - CDNJS
   - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
     transform_rules:
       - search: _
@@ -89,6 +90,8 @@ catch_rules:
             expire: 1000*60*60*8
             delay: 300
 
+  #! 并发CDN流量请求 - GITHUB
+
   #! 前端兼容webp
   # - rule: ^https\:\/\/imagecdndomain/(.*))\.jpg
   #   transform_rules:
@@ -99,12 +102,75 @@ catch_rules:
   #       replacein: url
   #       replacekey: .jpg
 
-  #! 静态资源 CDN 选择 - Github
+  #! 纯静态网站加速
+  # - rule: _ #ClientWorker语法糖，匹配当前域，返回一个域名带端口
+  #   transform_rules: #转换规则，最上面的优先最高
+  #     - search: \#.* #在发送请求时匹配#后内容并移除
+  #       replace: ''
+  #     - search: \?.* #在发送请求时匹配?后内容并移除，仅限静态请求
+  #       replace: '' 
+  #     - search: _ 
+  #       replace: 
+  #         - _
+  #         - ciraos.github.io
+  #         - ciraos.gitee.io #GiteePage托管
+  #         # - unpkg.com/xxx-html@xxx.xxx/dist
+  #         # - cdnjs.cloudflare.com/ajax/libs/xxx/xxx.xxx/dist
+  #         # - examplebucket.oss-xx-xx.aliyuncs.com
+  #         # - xxx.tencentcs.com
+  #         # - xxx.qbox.me
+  #     - search: \.html$
+  #       header:
+  #         Content-Type: text/html;charset=UTF-8 #修复标头
+  #     - search: _
+  #       action: fetch
+  #       fetch:
+  #         status: 200
+  #         engine: classic
+  #         preflight: false
+  #         timeout: 5000
+
+  #! ICP绕备、家宽、动态加速
+  #? 主站和分流站需要HTTPS，ClientWorker在HTTP环境下不工作。
+  #? 此外，为了正确传递Ccookie等鉴权消息，preflight设为开，并且credentials为include，
+  #? 这意味着你的源站必须要开启Access-Control-Allow-Origin(不能为*，
+  #? 必须是当前域名)和Access-Control-Allow-Credentials为true，否则会直接失败。
+  # - rule: _ #ClientWorker语法糖，匹配当前域，返回一个域名带端口
+  #   transform_rules: #转换规则，最上面的优先最高
+  #     - search: \#.* #在发送请求时匹配#后内容并移除
+  #       replace: ''
+  #     - search: _ 
+  #       replace: 
+  #         - _ #保留原始请求
+  #         - 110.42.139.35
+  #         - 10.42.139.35:12345
+  #         # - [2606::1234]:34567 #ipv6
+  #         # - 1.2.3.4.nip.io:65121
+  #     - search: \.(js|css)
+  #         action: fetch
+  #         fetch:
+  #         status: 200
+  #         engine: classic
+  #         preflight: true
+  #         timeout: 5000
+  #         mode: cors
+  #         redirect: follow
+  #         credentials: include
+  #     - search: _
+  #       action: fetch
+  #       fetch:
+  #         status: 200
+  #         engine: parallel
+  #         preflight: true
+  #         mode: cors
+  #         redirect: follow
+  #         credentials: include
+  #         timeout: 5000
 
   #! 不劫持（丢给浏览器）
   #! 2.8.1新增，跳过cw规则
   #! （现在已经不再需要，但为了兼容性和避免未知bug建议留下此配置）
-  # - rule: .*
-  #   transform_rules:
-  #     - search: _
-  #       action: skip
+  - rule: .*
+    transform_rules:
+      - search: _
+        action: skip
