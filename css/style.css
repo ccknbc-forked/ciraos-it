@@ -190,7 +190,7 @@ footer {
     line-height: 1.8;
     width: 100%;
     clear: both;
-    position: absolute;
+    position: relative;
     /* border-top: 1.8px solid #4a4035; */
     /* display: block; */
     /* padding: 40px 0 120px 0; */
