@@ -16,6 +16,15 @@
 
 /* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
+    font-family: "思源宋体";
+    font-weight: 600;
+    src: url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/QELo5El7RfNnZTfi5fwH5.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/jHAN59XAcw7A/C8OOVVrW8YWQJCml7IkHd.woff") format("woff");
+    font-display: swap;
+}
+
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
     font-family: "阿里妈妈数黑体";
     font-weight: 700;
     src: url("//at.alicdn.com/wf/webfont/On4DRzNbpJ8p/CS1KhJkjei06BLRbX0RsW.woff2") format("woff2"),
@@ -32,7 +41,10 @@
     font-display: swap;
 }
 
-/* 把我们所有标签的内外边距清零 */
+.iconfont {
+    font-size: 1.4em !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +52,7 @@
 }
 
 body {
-    font-family: '阿里妈妈数黑体', Arial, Helvetica, sans-serif;
+    /* font-family: '思源宋体', Arial, Helvetica, sans-serif; */
     background-color: var(--site-background-color);
 }
 
@@ -49,56 +61,70 @@ body {
 */
 
 header {
-    /* line-height: 56px; */
     width: 100%;
     transition: all .5s;
-    background-color: #1f2233;
-    /* display: block; */
-    /* font-size: 1em; */
-    /* justify-content: space-evenly; */
-    /* height: 100vh; */
-}
-
-.navigation {
-    display: flex;
-    height: 40px;
+    /* background-color: var(--card-background-color); */
     align-items: center;
-    justify-content: space-evenly;
-    transition: all .5s;
-    opacity: 1;
-    /* background-color: #17548f5c; */
-    filter: none;
-}
-
-/* .home {} */
-
-.home a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1em;
-    /* font-weight: 700; */
-    letter-spacing: 2.4px;
-}
-
-.daohanglan {
     display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 5px;
 }
 
-.daohanglan ul {
+#blog-name {
+    display: flex;
+    justify-content: center;
+}
+
+.back-home-button {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+#blog-name a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.link {
+    display: flex;
+    font-size: 1.4em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link ul {
     list-style-type: none;
 }
 
-/* .daohanglan ul:hover {} */
-
-.daohanglan ul li a {
-    color: #fff;
+.link ul li a {
     text-decoration: none;
-    font-size: 1em;
-    letter-spacing: 1.66px;
+    color: #000;
 }
 
-.navigation>.daohanglan>ul:not(:first-child) {
-    margin-left: 15px;
+.link>ul:not(:first-child) {
+    margin-left: 20px;
+}
+
+.social {
+    display: flex;
+}
+
+.social ul {
+    list-style-type: none;
+}
+
+.social ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social>ul:not(:first-child) {
+    margin-left: 10px;
 }
 
 /*
@@ -113,21 +139,21 @@ header {
 
 /* .content:hover {} */
 
-.first-content-list {
+.content-list {
     width: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
     margin: 0 auto 12px;
-    height: 400px;
+    /* height: 40px; */
 }
 
-.first-content-list .avatar {
+.content-list .avatar {
     margin-top: 60px;
 }
 
 .avatar img {
-    width: 10.2%;
+    width: 7%;
     border-radius: 100%;
     animation: avatar-circle-effects 10s linear infinite;
 }
@@ -150,35 +176,10 @@ header {
     }
 }
 
-.first-content-list p {
-    margin-top: 10px;
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-.first-content-list .social {
-    display: flex;
-    margin: 10px auto 0;
-    justify-content: center;
-    width: 60%;
-}
-
-.social ul {
-    list-style-type: none;
-}
-
-.social ul li a {
-    text-decoration: none;
-    color: #000;
-}
-
-.social>ul:not(:first-child) {
-    margin-left: 20px;
-}
-
-.second-content-list {
-    height: 260px;
-    background-color: rgb(131, 224, 224);
+.author {
+    text-align: center;
+    line-height: 2;
+    font-size: 24px;
 }
 
 /*
@@ -190,11 +191,11 @@ footer {
     line-height: 1.8;
     width: 100%;
     clear: both;
-    position: relative;
+    position: absolute;
     /* border-top: 1.8px solid #4a4035; */
     /* display: block; */
     /* padding: 40px 0 120px 0; */
-    background-color: var(--footer-background-color);
+    /* background-color: var(--footer-background-color); */
 }
 
 .footer-group {
@@ -202,7 +203,7 @@ footer {
     /* background-color: ; */
     /* height: 50px; */
     justify-content: center;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     flex-wrap: wrap;
 }
 
@@ -231,6 +232,8 @@ footer {
     height: 40px;
     align-items: center;
     padding-left: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /*

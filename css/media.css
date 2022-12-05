@@ -15,32 +15,27 @@
      * header
     */
 
-    /* .header {} */
-
-    .navigation {
+    header {
         display: block;
-        height: 60px;
-        margin: auto 0;
+        height: 120px;
     }
 
-    .navigation .home {
-        width: 100%;
-        margin: 6px auto;
-        text-align: center;
-    }
-
-    .navigation .daohanglan {
-        width: 80%;
-        margin: 0 auto;
+    header .link {
+        margin-top: 5px;
         justify-content: center;
+    }
+
+    header .social {
+        justify-content: center;
+        margin-top: 15px;
     }
 
     /*
      * content
     */
 
-    .first-content-list .avatar img {
-        width: 40%;
+    .content-list .avatar img {
+        width: 20%;
     }
 
     /*
