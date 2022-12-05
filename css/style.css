@@ -61,7 +61,7 @@ body {
 */
 
 header {
-    width: 100%;
+    width: 80%;
     transition: all .5s;
     /* background-color: var(--card-background-color); */
     align-items: center;
@@ -207,6 +207,10 @@ footer {
     flex-wrap: wrap;
 }
 
+.footer-group p {
+    color: #8fb2c9;
+}
+
 .footer-group-item {
     display: block;
     width: 120px;
@@ -231,9 +235,14 @@ footer {
     display: flex;
     height: 40px;
     align-items: center;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.end-footer-group p a {
+    text-decoration: none;
+    color: #f2481b;
 }
 
 /*
